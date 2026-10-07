@@ -76,7 +76,7 @@ Object.assign(ko, {
 'graphic.caption':'연구 흐름 그래픽',
 'flow.caption':'데스크톱 앱에서 직접 캡처 · Academic Neutral 테마.',
 'flow.next':'다음 단계: 선택한 노트 사이의 주장을 비교하고 초고 문단을 근거 자료와 대조하는 Claude 기능(선택 사항). 무엇을 보내고 무엇을 남길지는 연구자가 정합니다.',
-'claude.kicker':'Simple PDF · Claude 엔진','claude.pill':'파일럿 중',
+'claude.kicker':'Simple PDF · Claude 엔진','claude.pill':'파일럿 신규',
 'claude.title':'논문에 묻고,<br>쪽수는 그대로.',
 'claude.copy1':'Simple PDF에서 구절을 선택하고 질문하세요. Claude가 쉬운 말로 설명하고 문장마다 근거가 된 쪽을 붙여, 모든 답을 원문과 대조할 수 있습니다.',
 'claude.copy2':'정리도 같은 방식입니다. 한 번에 최대 40쪽을 섹션별로 정리하고, 쪽 번호와 함께 논증이 어떻게 흘러가는지 짧게 보여 줍니다.',
@@ -101,8 +101,7 @@ Object.assign(ko, {
 'roadmap.title':'앞으로의 길.',
 'roadmap.copy':'진행 중인 연구와 나란히 만들고, 더 넓게 내놓기 전에 연구자들과 먼저 시험합니다.',
 'road.1.date':'2025년 7월','road.1.t':'개발 시작','road.1.d':'대학원 연구자의 읽기와 쓰기에서 Academia Flow가 시작됩니다.',
-'road.2.t':'비공개 파일럿','road.2.d':'Flow, Archive와 Simple 도구들을 소수의 연구자가 매일 사용합니다.',
-'road.3.date':'2026년 10월','road.3.t':'Simple PDF에 Claude','road.3.d':'쪽 번호가 붙은 설명과 정리가 파일럿에 들어갑니다.',
+'road.2.date':'지금','road.2.t':'비공개 파일럿','road.2.d':'Flow, Archive와 Simple 도구들을 소수의 연구자와 함께 씁니다. Simple PDF의 Claude도 여기서 먼저 시험합니다.',
 'road.4.date':'2027년 상반기','road.4.t':'공개 베타','road.4.d':'Academia Flow와 함께 쓰는 도구들을 베타 신청자에게 엽니다.',
 'road.5.date':'다음','road.5.t':'Flow에 Claude','road.5.d':'노트 사이의 주장을 비교하고 초고를 근거와 대조합니다.',
 'founder.role':'대학원생·연구자 · 창업자·개발자 · 서울',
@@ -324,6 +323,57 @@ let resizeTimer;
 window.addEventListener('resize',()=>{
  clearTimeout(resizeTimer);resizeTimer=setTimeout(()=>paintScene(scene,false),120);
 });
+// Scroll-led motion. Without JS, IntersectionObserver or with reduced motion,
+// every element is simply shown in its final state.
+const motionRoot=document.documentElement;
+const canReveal='IntersectionObserver' in window && !reduceMotion.matches;
+const revealGroups=['.bridge > *','.appearance > *','.claude-head > *','.claude-facts li','.claude-next','.product-heading > *','.archive-layout > figure','.archive-map .map-row','.companions-title','.companion','.search-row','.roadmap-head > *','.timeline li','.founder > *','.contact-grid > *','.faq'];
+function streamAnswer(){
+ const lines=$$('.qa-answer p').map(p=>{
+  const node=[...p.childNodes].find(n=>n.nodeType===3&&n.textContent.trim());
+  return {p,node,full:node?node.textContent:''};
+ });
+ lines.forEach(line=>{line.p.style.minHeight=line.p.offsetHeight+'px';if(line.node)line.node.textContent='';line.p.classList.add('is-waiting');});
+ let index=0;
+ const next=()=>{
+  const line=lines[index++];
+  if(!line)return;
+  line.p.classList.replace('is-waiting','is-typing');
+  let shown=0;
+  const step=()=>{
+   shown=Math.min(line.full.length,shown+2);
+   if(line.node)line.node.textContent=line.full.slice(0,shown);
+   if(shown<line.full.length){setTimeout(step,26);return;}
+   line.p.classList.replace('is-typing','is-done');
+   line.p.style.minHeight='';
+   setTimeout(next,320);
+  };
+  step();
+ };
+ setTimeout(next,1500);
+}
+if(canReveal){
+ motionRoot.classList.add('js-motion');
+ revealGroups.forEach(selector=>$$(selector).forEach((el,i,all)=>{
+  el.classList.add('reveal');
+  if(all.length>1)el.style.setProperty('--d',Math.min(i,6)*90+'ms');
+ }));
+ $$('.timeline li').forEach((li,i)=>li.style.setProperty('--d',(250+i*260)+'ms'));
+ const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{
+  if(!entry.isIntersecting)return;
+  const el=entry.target;
+  el.classList.add('is-in');
+  observer.unobserve(el);
+  if(el.classList.contains('qa-stack'))streamAnswer();
+  if(el.classList.contains('timeline')){
+   const now=$('.timeline li.now');
+   if(now){el.style.setProperty('--progress-x',now.offsetLeft+'px');el.style.setProperty('--progress-y',now.offsetTop+'px');}
+  }
+ }),{threshold:.18,rootMargin:'0px 0px -8% 0px'});
+ $$('.reveal').forEach(el=>observer.observe(el));
+ [$('.qa-stack'),$('.timeline')].forEach(el=>el&&observer.observe(el));
+ reduceMotion.addEventListener('change',()=>{if(reduceMotion.matches)motionRoot.classList.remove('js-motion');});
+}
 setLanguage(language);
 paintScene(0,false);
 schedule();
