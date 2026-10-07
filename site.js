@@ -67,6 +67,56 @@ const ko = {
 'faq.theme.a':'Flow는 여러 라이트·다크·스페셜 테마와 Light·Dark·Auto 모드를 제공합니다. 이 페이지의 앱 화면은 Academic Neutral 테마로 촬영했습니다.',
 'footer.top':'맨 위로 ↑'
 };
+Object.assign(ko, {
+'nav.tools':'도구','nav.roadmap':'로드맵','nav.beta':'베타 신청',
+'hero.kicker':'인문학·사회과학 연구를 위한 소프트웨어',
+'hero.beta':'베타 신청하기',
+'hero.claude':'파일럿 신규: Simple PDF의 Claude ↗',
+'status':'비공개 파일럿 운영 중 · 2027년 상반기 공개 베타 예정',
+'graphic.caption':'연구 흐름 그래픽',
+'flow.caption':'데스크톱 앱에서 직접 캡처 · Academic Neutral 테마.',
+'flow.next':'다음 단계: 선택한 노트 사이의 주장을 비교하고 초고 문단을 근거 자료와 대조하는 Claude 기능(선택 사항). 무엇을 보내고 무엇을 남길지는 연구자가 정합니다.',
+'claude.kicker':'Simple PDF · Claude 엔진','claude.pill':'파일럿 중',
+'claude.title':'논문에 묻고,<br>쪽수는 그대로.',
+'claude.copy1':'Simple PDF에서 구절을 선택하고 질문하세요. Claude가 쉬운 말로 설명하고 문장마다 근거가 된 쪽을 붙여, 모든 답을 원문과 대조할 수 있습니다.',
+'claude.copy2':'정리도 같은 방식입니다. 한 번에 최대 40쪽을 섹션별로 정리하고, 쪽 번호와 함께 논증이 어떻게 흘러가는지 짧게 보여 줍니다.',
+'qa.passage':'선택한 구절 · 489쪽','qa.question':'나의 질문','qa.answer':'답변 · 문장마다 근거 쪽',
+'qa.caption':'구절 질문 흐름을 표현한 그래픽 · Simple PDF는 현재 한국어로 답합니다.',
+'fact.grounded.t':'원문에 근거한 답',
+'fact.grounded.d':'제공한 쪽의 텍스트만 근거로 씁니다. 숫자는 원문 표기 그대로 두고, 발췌로 뒷받침할 수 없는 내용은 그렇다고 밝힙니다.',
+'fact.sent.t':'보낼 내용은 연구자가 선택',
+'fact.sent.d':'범위 안의 쪽 텍스트, 질문, 직접 고른 그림 영역만 Claude API로 보냅니다. PDF 파일, 하이라이트, 메모는 보내지 않습니다.',
+'fact.local.t':'원하면 이 Mac 안에서만',
+'fact.local.d':'같은 패널을 Mac에서 실행되는 모델로 바꾸면 아무것도 밖으로 나가지 않습니다.',
+'fact.key.t':'API 키는 키체인에',
+'fact.key.d':'API 키는 그 기기의 macOS 키체인에 저장하며, 저장하기 전에 유효한지 확인합니다.',
+'claude.next':'Claude와 함께 계획 중인 다음 기능',
+'next.compare':'Flow — 선택한 노트 사이의 주장 비교',
+'next.draft':'Flow — 초고 문단을 근거 자료와 대조',
+'next.translate':'Simple PDF — 선택한 구절·쪽 번역',
+'archive.caption':'Academia Archive · 현재 한국어 인터페이스.',
+'pdf.next':'파일럿 신규: 선택한 구절을 Claude에게 묻기 ↗',
+'pdf.caption':'본문 1쪽과 미주 10쪽을 나란히.',
+'note.caption':'같은 노트의 리치텍스트·Markdown 화면.',
+'roadmap.title':'앞으로의 길.',
+'roadmap.copy':'진행 중인 연구와 나란히 만들고, 더 넓게 내놓기 전에 연구자들과 먼저 시험합니다.',
+'road.1.date':'2025년 7월','road.1.t':'개발 시작','road.1.d':'대학원 연구자의 읽기와 쓰기에서 Academia Flow가 시작됩니다.',
+'road.2.t':'비공개 파일럿','road.2.d':'Flow, Archive와 Simple 도구들을 소수의 연구자가 매일 사용합니다.',
+'road.3.date':'2026년 10월','road.3.t':'Simple PDF에 Claude','road.3.d':'쪽 번호가 붙은 설명과 정리가 파일럿에 들어갑니다.',
+'road.4.date':'2027년 상반기','road.4.t':'공개 베타','road.4.d':'Academia Flow와 함께 쓰는 도구들을 베타 신청자에게 엽니다.',
+'road.5.date':'다음','road.5.t':'Flow에 Claude','road.5.d':'노트 사이의 주장을 비교하고 초고를 근거와 대조합니다.',
+'founder.role':'대학원생·연구자 · 창업자·개발자 · 서울',
+'founder.p3':'지금은 소규모 비공개 파일럿으로 운영하며, 실제 연구 방식이 다음에 만들 기능을 정합니다. 공개 베타는 2027년 상반기를 계획하고 있습니다.',
+'contact.title':'베타에<br>참여하세요.',
+'contact.copy':'공개 베타는 2027년 상반기를 계획하고 있습니다. 전공과 지금 하고 있는 작업을 알려주시면 자리가 열릴 때 연락드립니다. 지금 비공개 파일럿에 참여하고 싶은 연구자도 문의해 주세요.',
+'beta.cta':'베타 신청하기','beta.pilot':'비공개 파일럿 문의',
+'faq.access.q':'언제 사용할 수 있나요?',
+'faq.access.a':'지금은 소규모 비공개 파일럿으로 운영하며, 공개 베타는 2027년 상반기를 계획하고 있습니다. 베타 신청을 남기거나 파일럿 참여를 문의해 주세요.',
+'faq.ai.q':'Simple PDF는 어떤 AI를 쓰고, 무엇을 보내나요?',
+'faq.ai.a':'패널마다 고릅니다. Claude API의 Claude Opus 5.5, 또는 Mac에서 실행되는 모델입니다. Claude를 고르면 범위 안의 쪽 텍스트, 질문, 직접 고른 그림 영역만 Anthropic API로 보냅니다. PDF 파일, 하이라이트, 메모는 보내지 않습니다. <a href="privacy.html#ko">개인정보 안내</a>를 참고하세요.',
+'shots.note':'화면은 실제 앱이며, 시연용 작업 공간과 공개 서지정보를 사용했습니다.',
+'footer.company':'© 2026 Monoon Works · 서울','footer.privacy':'개인정보 안내'
+});
 const stages = [
 {file:'flow-library',en:'Find books and papers by title, author, or tag. Keep reading states and attachments with each record, so a growing bibliography becomes a view of the work in front of you.',ko:'제목·저자·태그로 책과 논문을 찾습니다. 문헌마다 읽기 상태와 첨부파일을 함께 두어, 늘어나는 참고문헌 목록에서 지금 해야 할 작업을 확인합니다.',label:{en:'Academia Flow — reading library',ko:'Academia Flow — 문헌 목록'}},
 {file:'flow-notes',en:'Keep an interpretation tied to its source. Work with page-linked quotations and notes, then develop a claim, the evidence it needs, and the counterpoints it must address.',ko:'해석을 원문의 근거와 연결합니다. 쪽수를 남긴 인용구와 노트를 다루며 주장, 필요한 근거, 검토할 반론을 정리합니다.',label:{en:'Academia Flow — research notes',ko:'Academia Flow — 연구 노트'}},
@@ -117,7 +167,7 @@ function imageLabel(path){
 function setLanguage(next) {
  language=next;
  document.documentElement.lang=language;
- document.title=language==='ko'?'Monoon Works — 연구의 흐름을 이어가세요':'Monoon Works — Follow the thought';
+ document.title=language==='ko'?'Monoon Works — 인문학·사회과학 연구를 위한 소프트웨어':'Monoon Works — Research software for the humanities and social sciences';
  updateImageAlts();
  localized.forEach(el => { el.innerHTML=language==='ko' ? (ko[el.dataset.key] || english.get(el)) : english.get(el); });
  $('.lang').textContent=language==='ko'?'EN':'KO';
