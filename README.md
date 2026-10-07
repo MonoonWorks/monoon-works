@@ -1,23 +1,13 @@
 # Monoon Works
 
-An independent software and games studio website for Simple PDF, Simple Notes, Academia Flow, Academia Archive, and Basketball Player Maker.
+A temporary Coming Soon page for Academia Flow and Academia Archive, with the studio contact address.
 
-## Preview
+The self-contained `index.html` needs no build step. The site is published through GitHub Pages at https://monoonworks.com/.
 
-Open `index.html` in a browser. The page is self-contained, with embedded app icons, product screenshots, and fonts, and needs no build step.
+## Restore the full website
 
-Each app has a dedicated product view, reachable from its card or homepage preview, with selectable, expandable screenshots and a feature overview. Screenshots use original example content. Archive labels are localized into English in the isolated website preview; the source application is unchanged.
+The previous full website, including product previews, game showcase, and contact email, is preserved in commit `76db0cde8a7bf5df0d937f19e36755d092784e49`. Restore `index.html` and `README.md` from that commit to republish it.
 
-The Games section introduces Basketball Player Maker as an in-development career simulation, with an existing in-game environment and an actual player-creation screenshot. The game itself and its source code are not distributed with this website.
+## Fonts
 
-Academia Flow leads the homepage, with Monoon Works positioned as a studio rooted in academic research and open to everyday thinking. The tools are being piloted within the maker’s personal network.
-
-English is the default language. The language control provides Korean for the app content. The game showcase is in English; the pictured development build currently has a Korean interface.
-
-The interactive reading, writing, planning, and archive examples are website demonstrations, not connections to the apps. No installers, purchases, analytics, or user data collection are included.
-
-## Credits
-
-App icons belong to their respective Monoon Works projects. Bricolage Grotesque and Instrument Serif are distributed under the SIL Open Font License.
-
-Design references: [Panic](https://panic.com/), [Things](https://culturedcode.com/things/), [Linear](https://linear.app/).
+Bricolage Grotesque and Instrument Serif are distributed under the SIL Open Font License. See `FONT-LICENSES.txt`.
