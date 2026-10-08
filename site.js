@@ -24,15 +24,20 @@ const ko = {
 'flow.name':'새김','flow.sub':'읽기·노트·집필·계획을 한 작업공간에','flow.title':'연구의 여러 시간을 한자리에.',
 'flow.copy1':'새김은 일정과 읽기, 노트와 집필을 오가며 긴 연구를 이어 갑니다. 서로 다른 속도로 진행되는 작업을 한 공간에서 살필 수 있습니다.',
 'flow.copy2':'인용구에는 쪽 번호가 남고, 노트는 출처와 대조할 수 있으며, 장별 초고는 그것을 가능하게 한 근거 옆에 머뭅니다.',
-'stage.read':'읽기','stage.notes':'노트','stage.writing':'집필','stage.planning':'계획',
-'flow.caption':'데스크톱 앱에서 직접 캡처 · 앱 안의 이름은 아직 Academia Flow · Academic Neutral 테마 · 시연용 작업 공간.','zoom':'크게 보기 ↗',
+'stage.library':'문헌 목록','stage.read':'문헌 읽기','stage.notes':'연구 노트','stage.writing':'원고','stage.planning':'주간 계획','themes.lead':'같은 문헌 목록, 세 가지 테마',
+'zoom':'크게 보기 ↗',
 'flow.word.t':'Microsoft Word에서도 이어서','flow.word.d':'별도 추가 기능으로 인용, 각주와 참고문헌을 작성합니다.',
-'flow.theme.t':'나의 작업 방식에 맞는 화면','flow.theme.d':'Light·Dark·Auto 모드와 여러 테마. 이 페이지는 Academic Neutral입니다.','flow.theme.link':'화면 설정 보기 ↗',
+'flow.plan.t':'계획 중','flow.plan.d':'선택한 연구 노트의 주장 비교, 초고 문단과 근거 자료 대조를 위한 선택적 Claude 연결. 지금은 자동 변환이나 동기화가 없습니다.',
 'archive.name':'갈피','archive.sub':'원본 자료를 맥락과 함께 보관',
 'archive.title':'자료에는<br>맥락이 있습니다.',
 'archive.copy1':'사진, 스캔, PDF와 서지정보가 그 의미를 만드는 정보와 함께 남습니다. 기여자, 날짜, 식별자, 전사와 자료에 대한 노트까지.',
 'archive.copy2':'Zotero·Juris-M 자료와 Tropy 내보내기를 가져오고, 컬렉션으로 정리하고, 메타데이터와 로컬 OCR 텍스트를 검색합니다. 인용 정보는 원본으로 돌아갈 길과 함께 새김으로 가져옵니다.',
 'archive.caption':'갈피 · 앱 안의 이름은 아직 Academia Archive · 현재 한국어 인터페이스.',
+'conn.title':'하나의 문헌이 갈피와 새김을 오갑니다.',
+'scene1.t':'갈피에 기록을 둔다','scene1.d':'서지정보, 첨부파일, 전사와 자료별 메모가 기록에 남습니다. 자료가 무엇인지뿐 아니라 어디서 왔고 어떻게 읽었는지까지.',
+'scene2.t':'새김으로 가져온다','scene2.d':'새김의 문헌 목록에서 갈피를 검색해 기록을 연결합니다. 서지정보가 함께 오고, 원래 기록으로 돌아가는 링크가 생깁니다.',
+'scene3.t':'읽고, 적고, 돌아간다','scene3.d':'새김에서 독서 메모와 쪽수 인용구를 씁니다. “Archive linked”가 연결을 보여 주고, “Open Archive”로 원래 기록에 돌아갑니다.',
+'conn.scope':'연결이 전달하는 것은 서지정보와 기록으로 돌아가는 링크입니다. 원본 파일, OCR·전사, 갈피의 메모는 새김으로 복사·동기화되지 않습니다.',
 'archive.m1':'문헌 기록','archive.m2':'원문 파일','archive.m3':'구절','archive.m4':'맥락','archive.mapnote':'원본에서 연결되어, 언제든 돌아갈 수 있도록.',
 'claude.sub':'본문 옆에 미주를 두고 읽는 macOS 리더','claude.status':'2026년 10월부터 파일럿에서',
 'claude.title':'논문에 묻고,<br>쪽수는 그대로.',
@@ -80,15 +85,16 @@ const tools = {
  search:{name:'Simple Search',en:'The name you remember, the file you need.',ko:'기억나는 이름으로, 바로 그 파일.',href:'#simple-search'}
 };
 const stages = [
- {en:'Find books and papers by title, author or tag. Keep reading states and attachments with each record, so a growing bibliography becomes a view of the work in front of you.',ko:'제목·저자·태그로 문헌을 찾고, 문헌마다 읽기 상태와 첨부파일을 남깁니다. 쌓여 가는 참고문헌이 지금 할 일의 풍경이 됩니다.'},
- {en:'Keep an interpretation tied to its source. Work with page-linked quotations and notes, then develop claims, evidence and counterpoints in the research journal.',ko:'해석을 출처에 묶어 둡니다. 쪽 번호가 붙은 인용구와 노트로 작업하고, 연구일지에서 주장·근거·반론을 발전시킵니다.'},
- {en:'Move from notes into sustained chapter writing. Keep a manuscript organised in its binder, with headings, footnotes, citations and figures in reach.',ko:'노트에서 장별 집필로 넘어갑니다. 바인더로 원고를 정리하고 제목·각주·인용·그림을 곁에 둡니다.'},
- {en:'Give the long project a place in the week. Arrange reading, research, writing, classes and meetings, and return to what the last session left.',ko:'긴 프로젝트에 한 주의 자리를 줍니다. 읽기·연구·집필·수업·회의를 배치하고, 지난 작업이 남긴 곳으로 돌아옵니다.'}
+ {en:'Find the next reading by title, author or tag — Objectivity, Seeing Like a State — and keep its state: collected, to read, reading, finished. The list shows the work in front of you, not only what was saved. Open a record to begin.',ko:'제목·저자·태그로 다음에 읽을 문헌을 찾고(Objectivity, Seeing Like a State…) 수집·읽을 예정·읽는 중·완료 상태를 남깁니다. 목록은 저장한 것이 아니라 지금 할 일을 보여 줍니다. 문헌을 열면 다음 단계입니다.',cap:{en:'Library · public bibliographic records from Zotero · example reading states',ko:'문헌 목록 · Zotero에서 가져온 공개 서지정보 · 예시 읽기 상태'}},
+ {en:'Beside the bibliography, write the reading note: the question you bring, how it connects to the project, the next step. Quotations take a page number so the passage can be found again. What you note here is what the research notes build on.',ko:'서지정보 옆에 독서 메모를 씁니다. 가져온 질문, 프로젝트와의 연결, 다음 할 일. 인용구에는 쪽수를 붙여 나중에 그 구절로 돌아갑니다. 여기 적은 것이 연구 노트의 재료가 됩니다.',cap:{en:'Reading record · Objectivity linked from Galpi · the note is a demonstration, not a quotation from the book',ko:'문헌 읽기 · 갈피에서 연결한 Objectivity · 메모는 예시이며 책의 인용문이 아닙니다'}},
+ {en:'Set a claim down with the evidence it still needs and the counterpoint it has to meet. Reviewing that structure is how a chapter develops; nothing is turned into a draft automatically.',ko:'주장을 적고, 아직 필요한 근거와 반론을 함께 남깁니다. 이 구조를 검토하며 원고의 장을 발전시킵니다. 자동으로 초고가 되지는 않습니다.',cap:{en:'Research note · “Argument map · Prediction as paperwork” · demonstration project',ko:'연구 노트 · “Argument map · Prediction as paperwork” · 예시 프로젝트'}},
+ {en:'Open the chapter in its binder: the structure on the left, the body in the middle, the sources beside it. Notes and writing share one workspace, so the evidence stays within reach while you write.',ko:'바인더에서 장을 엽니다. 왼쪽에 구조, 가운데에 본문, 곁에 문헌. 노트와 집필이 같은 작업 공간에 있어 쓰는 동안 근거가 손닿는 곳에 있습니다.',cap:{en:'Manuscript · “The Paper Trail of Prediction” · demonstration project',ko:'원고 · “The Paper Trail of Prediction” · 예시 프로젝트'}},
+ {en:'Place reading, research, writing, seminars and meetings in the week, each as what it is. The plan shows where the project’s time actually goes, and where the next session starts.',ko:'읽기, 자료 조사, 집필, 세미나, 회의를 각각 그 활동으로 한 주에 배치합니다. 계획은 프로젝트의 시간이 실제로 어디로 가는지, 다음 작업이 어디서 시작하는지 보여 줍니다.',cap:{en:'Weekly plan · reading, research, writing, class, meeting and administration · demonstration project',ko:'주간 계획 · 읽기·조사·집필·수업·회의·행정 · 예시 프로젝트'}}
 ];
 const imageLabels = {
- 'flow-library':{en:'Saegim — reading library',ko:'새김 — 문헌 목록'},'flow-notes':{en:'Saegim — research notes',ko:'새김 — 연구 노트'},
+ 'flow-library':{en:'Saegim — library · Academic Neutral',ko:'새김 — 문헌 목록 · Academic Neutral'},'flow-library-forest':{en:'Saegim — library · Deep Forest',ko:'새김 — 문헌 목록 · Deep Forest'},'flow-library-eink':{en:'Saegim — library · Simple E-Ink',ko:'새김 — 문헌 목록 · Simple E-Ink'},'flow-linked-reading':{en:'Saegim — reading record linked from Galpi',ko:'새김 — 갈피에서 연결한 문헌 읽기'},'flow-archive-import':{en:'Saegim — import from Galpi',ko:'새김 — 갈피에서 가져오기'},'flow-notes':{en:'Saegim — research notes',ko:'새김 — 연구 노트'},
  'flow-manuscript':{en:'Saegim — chapter writing',ko:'새김 — 원고'},'flow-week':{en:'Saegim — weekly planning',ko:'새김 — 주간 계획'},
- 'flow-themes':{en:'Saegim — appearance settings',ko:'새김 — 화면 설정'},'archive-library':{en:'Galpi — source library',ko:'갈피 — 자료 라이브러리'},
+ 'archive-library':{en:'Galpi — source library',ko:'갈피 — 자료 라이브러리'},
  'simple-pdf':{en:'Simple PDF — body and endnotes',ko:'Simple PDF — 본문과 미주'},'note-editor':{en:'Simple Note — rich text',ko:'Simple Note — 리치텍스트'},
  'note-markdown':{en:'Simple Note — Markdown',ko:'Simple Note — Markdown'},'simple-search':{en:'Simple Search — menu bar search',ko:'Simple Search — 메뉴 막대 검색'}
 };
@@ -107,6 +113,7 @@ function setLanguage(next, push = true) {
  $('.lang').textContent = language === 'ko' ? 'EN' : 'KO';
  $('.lang').setAttribute('aria-label', language === 'ko' ? 'Switch to English' : '한국어로 전환');
  $('#stage-description').textContent = stages[activeStage][language];
+ $('#stage-caption').textContent = stages[activeStage].cap[language];
  $$('[data-image]').forEach(b => b.setAttribute('aria-label', (language === 'ko' ? '화면 확대: ' : 'Enlarge: ') + imageLabel(b.dataset.image)));
  $('#search-input').placeholder = language === 'ko' ? 'ㅈㄱㅅ' : 'ㅈㄱㅅ or "field"';
  if (activeTool) describeTool(activeTool);
@@ -218,15 +225,24 @@ function selectStage(index, focus = false){
  $$('.stage-tab').forEach((b,i) => { b.setAttribute('aria-selected', String(i===index)); b.tabIndex = i===index ? 0 : -1; });
  $$('.shot').forEach((p,i) => { p.getAnimations?.().forEach(a => a.cancel()); p.style.clipPath=''; p.hidden = i!==index; p.classList.toggle('is-active', i===index); });
  $('#stage-description').textContent = stages[index][language];
+ $('#stage-caption').textContent = stages[index].cap[language];
  const panel = $('#stage-panel-'+index);
  if (!reduceMotion.matches && panel.animate) panel.animate([{clipPath:'inset(0 0 0 100%)'},{clipPath:'inset(0 0 0 0%)'}], {duration:540, easing:'cubic-bezier(.16,1,.3,1)'});
  if (focus) $('#stage-tab-'+index).focus();
 }
 $$('.stage-tab').forEach((b,i) => {
  b.addEventListener('click', () => selectStage(i));
- b.addEventListener('keydown', e => { let t; if (e.key==='ArrowDown'||e.key==='ArrowRight') t=(i+1)%4; if (e.key==='ArrowUp'||e.key==='ArrowLeft') t=(i+3)%4; if (e.key==='Home') t=0; if (e.key==='End') t=3; if (t!==undefined){ e.preventDefault(); selectStage(t,true);} });
+ b.addEventListener('keydown', e => { let t; const n=$$('.stage-tab').length; if (e.key==='ArrowDown'||e.key==='ArrowRight') t=(i+1)%n; if (e.key==='ArrowUp'||e.key==='ArrowLeft') t=(i+n-1)%n; if (e.key==='Home') t=0; if (e.key==='End') t=n-1; if (t!==undefined){ e.preventDefault(); selectStage(t,true);} });
 });
 $('#active-zoom').addEventListener('click', () => openImage($('#stage-panel-'+activeStage+' button').dataset.image));
+// Theme: the same library capture in Academic Neutral, Deep Forest or Simple E-Ink.
+$$('.theme-tab').forEach(b => b.addEventListener('click', () => {
+ $$('.theme-tab').forEach(x => x.setAttribute('aria-pressed', String(x===b)));
+ const path = 'images/flow-library'+b.dataset.theme+'.webp';
+ const img = $('#library-shot'); const btn = img.parentElement;
+ btn.dataset.image = path; img.src = path; img.alt = imageLabel(path);
+ if (activeStage !== 0) selectStage(0); else if (!reduceMotion.matches && img.animate) img.animate([{opacity:.35},{opacity:1}], {duration:420, easing:'cubic-bezier(.16,1,.3,1)'});
+}));
 
 /* ---------- image dialog ---------- */
 const dialog = $('.image-dialog');
