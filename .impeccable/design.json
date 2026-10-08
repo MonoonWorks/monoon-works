@@ -1,0 +1,141 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-08T02:00:00+09:00",
+  "title": "Design System: Monoon Works",
+  "extensions": {
+    "colorMeta": {
+      "cinnabar": { "role": "primary", "displayName": "Cinnabar", "canonical": "#B44B34", "tonalRamp": ["#2E120C", "#4D1E14", "#6E2B1D", "#8F3927", "#B44B34", "#CF7A66", "#E4A999", "#F3D8D0"] },
+      "tide": { "role": "secondary", "displayName": "Tide (Academia Flow)", "canonical": "#285E71", "tonalRamp": ["#0B1A20", "#142F3A", "#1C4454", "#285E71", "#3F7B90", "#7FB1C4", "#B3D2DE", "#E0EEF2"] },
+      "moss": { "role": "secondary", "displayName": "Moss (Academia Archive)", "canonical": "#53634A", "tonalRamp": ["#161B13", "#2A3225", "#3E4A37", "#53634A", "#6E8162", "#97A98C", "#C2CEB9", "#E6EBE1"] },
+      "clay": { "role": "secondary", "displayName": "Clay (Simple PDF)", "canonical": "#A84F40", "tonalRamp": ["#2C1410", "#4A221B", "#6A3127", "#8A4034", "#A84F40", "#C57B6E", "#DEAAA0", "#F1D9D3"] },
+      "ochre": { "role": "secondary", "displayName": "Ochre (Simple Note)", "canonical": "#8B662B", "tonalRamp": ["#241A0B", "#3D2C13", "#57401C", "#715324", "#8B662B", "#AD8A52", "#CDB38B", "#E9DCC6"] },
+      "iris": { "role": "secondary", "displayName": "Iris (Simple Search)", "canonical": "#635686", "tonalRamp": ["#1A1624", "#2D273E", "#413857", "#52476F", "#635686", "#8A7FA8", "#B1A9C7", "#DAD5E6"] },
+      "paper": { "role": "neutral", "displayName": "Paper", "canonical": "#F4F1E9", "tonalRamp": ["#2A2822", "#4E4A40", "#726D5F", "#97917F", "#BBB5A2", "#DBD6C6", "#EAE5D9", "#F4F1E9"] },
+      "ink": { "role": "neutral", "displayName": "Ink", "canonical": "#242923", "tonalRamp": ["#242923", "#3A4238", "#4A5248", "#60665D", "#8A9087", "#B5BAB2", "#D5D8D2", "#EDEEEB"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "The hero statement only; Korean switches to Pretendard 700." },
+      "headline": { "displayName": "Headline", "purpose": "Section statements and product headings." },
+      "title": { "displayName": "Title", "purpose": "Ledger and product-row headings." },
+      "body": { "displayName": "Body", "purpose": "Running copy, 66ch measure." },
+      "label": { "displayName": "Label", "purpose": "Board labels, tile names, kinds and dates; never uppercase." }
+    },
+    "shadows": [
+      { "name": "dialog", "value": "0 30px 90px -20px #24292399", "purpose": "The enlarged-image dialog only; the page is flat at rest." },
+      { "name": "dot-halo", "value": "0 0 0 3px #FFFDF7", "purpose": "Keeps the cinnabar dot legible over grid lines and tiles." }
+    ],
+    "motion": [
+      { "name": "ease", "value": "cubic-bezier(.16, 1, .3, 1)", "purpose": "Every arrival: tiles, dot travel, wipes, reveals." },
+      { "name": "mark-draw", "value": "stroke-dashoffset 1.1s ease", "purpose": "Marks draw themselves in by their strokes; fills fade after 0.5s." },
+      { "name": "dot-travel", "value": "offset-distance 900ms ease along a Manhattan path on the grid", "purpose": "The dot moves only along grid lines, from tile corner to tile corner." },
+      { "name": "stage-wipe", "value": "clip-path inset(0 0 0 100%) → inset(0 0 0 0) 540ms", "purpose": "Flow tab change." },
+      { "name": "stream", "value": "2 characters per 26ms, 320ms between sentences", "purpose": "The Claude answer arrives sentence by sentence, the page chip after each." },
+      { "name": "reveal", "value": "opacity + translateY(18px) 0.8–0.9s ease, sibling stagger 90ms (max 5)", "purpose": "Ledger rows and figures below the fold." }
+    ],
+    "breakpoints": [
+      { "name": "wide", "value": "1100px" },
+      { "name": "phone", "value": "780px" },
+      { "name": "narrow", "value": "400px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Ink rectangle with the ↗ arrow; the page's main action.",
+      "html": "<a class=\"ds-btn-primary\" href=\"#\"><span>Join the beta</span><span class=\"ds-arrow\" aria-hidden=\"true\">↗</span></a>",
+      "css": ".ds-btn-primary{display:inline-flex;align-items:center;gap:18px;padding:0 22px;min-height:52px;background:#242923;color:#FFFDF7;text-decoration:none;font:600 15px/1 Pretendard,Manrope,sans-serif;transition:background .2s}.ds-btn-primary:hover{background:#3a4238}.ds-btn-primary:focus-visible{outline:2px solid #B44B34;outline-offset:4px}.ds-arrow{font-family:Manrope,sans-serif;font-size:18px}"
+    },
+    {
+      "name": "Nav action",
+      "kind": "button",
+      "refersTo": "nav-cta",
+      "description": "Outlined header action that fills on hover.",
+      "html": "<a class=\"ds-nav-cta\" href=\"#\">Join the beta</a>",
+      "css": ".ds-nav-cta{display:inline-flex;align-items:center;min-height:42px;padding:0 16px;border:1px solid #242923;color:#242923;text-decoration:none;font:400 14px/1 Pretendard,sans-serif}.ds-nav-cta:hover{background:#242923;color:#FFFDF7}.ds-nav-cta:focus-visible{outline:2px solid #B44B34;outline-offset:4px}"
+    },
+    {
+      "name": "Research tile",
+      "kind": "custom",
+      "refersTo": "tile-research",
+      "description": "The app tile for Flow and Archive: colour fill, paper mark, name beneath.",
+      "html": "<button class=\"ds-tile\" type=\"button\"><svg viewBox=\"0 0 128 128\" aria-hidden=\"true\"><path d=\"M18 45C35 47 50 56 58 71V103C47 90 33 82 18 80V45ZM70 72C79 50 94 33 110 24V65C93 74 80 87 70 104V72Z\" fill=\"currentColor\"/></svg><span class=\"ds-tile-name\">Flow</span></button>",
+      "css": ".ds-tile{position:relative;width:96px;aspect-ratio:1;border:0;padding:0;background:#285E71;color:#F4F1E9;border-radius:22%;display:grid;place-items:center;cursor:pointer;transition:transform .5s cubic-bezier(.16,1,.3,1)}.ds-tile svg{width:82%;height:82%}.ds-tile:hover{transform:translateY(-3px)}.ds-tile:focus-visible{outline:0;box-shadow:0 0 0 3px #FFFDF7,0 0 0 5px #B44B34}.ds-tile-name{position:absolute;top:calc(100% + 9px);left:50%;transform:translateX(-50%);font:600 11px/1.3 Manrope,sans-serif;color:#60665D;white-space:nowrap}"
+    },
+    {
+      "name": "Simple tile",
+      "kind": "custom",
+      "refersTo": "tile-simple",
+      "description": "The app tile for the Simple tools: sand ground, mark in the tool's colour.",
+      "html": "<button class=\"ds-tile-simple\" type=\"button\"><svg viewBox=\"0 0 128 128\" aria-hidden=\"true\"><path d=\"M33 18H82L104 40V99Q104 110 93 110H33Q22 110 22 99V29Q22 18 33 18ZM82 18V40H104\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"8\" stroke-linejoin=\"round\"/><rect x=\"39\" y=\"56\" width=\"24\" height=\"36\" rx=\"2\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"6\"/><rect x=\"77\" y=\"56\" width=\"13\" height=\"24\" rx=\"2\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"6\"/></svg><span class=\"ds-tile-name\">Simple PDF</span></button>",
+      "css": ".ds-tile-simple{position:relative;width:76px;aspect-ratio:1;border:0;padding:0;background:#EAE5D9;color:#A84F40;box-shadow:inset 0 0 0 1px #CECFC3;border-radius:22%;display:grid;place-items:center;cursor:pointer}.ds-tile-simple svg{width:78%;height:78%}.ds-tile-simple:hover{transform:translateY(-3px)}.ds-tile-simple:focus-visible{outline:0;box-shadow:inset 0 0 0 1px #CECFC3,0 0 0 3px #FFFDF7,0 0 0 5px #B44B34}.ds-tile-name{position:absolute;top:calc(100% + 9px);left:50%;transform:translateX(-50%);font:600 11px/1.3 Manrope,sans-serif;color:#60665D;white-space:nowrap}"
+    },
+    {
+      "name": "Ledger row",
+      "kind": "card",
+      "refersTo": "ledger-row",
+      "description": "The container that replaces cards: a rule, a title column and a copy column.",
+      "html": "<div class=\"ds-ledger\"><div class=\"ds-ledger-row\"><h3>Start light.</h3><p>Finding, opening and writing the first line should be short.</p></div><div class=\"ds-ledger-row\"><h3>Keep context close.</h3><p>The source and its notes, the sentence and its page, sit together.</p></div></div>",
+      "css": ".ds-ledger{border-top:1px solid #CECFC3;font-family:Pretendard,sans-serif;color:#242923}.ds-ledger-row{display:grid;grid-template-columns:.6fr 1.4fr;gap:40px;padding:28px 0;border-bottom:1px solid #CECFC3;align-items:baseline}.ds-ledger-row h3{margin:0;font:700 22px/1.1 Manrope,sans-serif;letter-spacing:-.04em}.ds-ledger-row p{margin:0;font-size:16px;line-height:1.7;color:#60665D}"
+    },
+    {
+      "name": "Page-cite chip",
+      "kind": "chip",
+      "refersTo": "cite-chip",
+      "description": "The page reference after each answered sentence.",
+      "html": "<p class=\"ds-sentence\">…강둑 하나의 장면으로 보여 준다. <a class=\"ds-cite\" href=\"#\">p. 489</a></p>",
+      "css": ".ds-sentence{font:400 15px/1.75 Pretendard,sans-serif;color:#242923;margin:0}.ds-cite{display:inline-block;margin-left:4px;padding:0 8px;border:1px solid #d9a99f;border-radius:999px;font:600 11px/1.7 Manrope,sans-serif;color:#A84F40;text-decoration:none;white-space:nowrap;vertical-align:1px}.ds-cite:hover{background:#F1D9D3}.ds-cite:focus-visible{outline:2px solid #B44B34;outline-offset:3px}"
+    },
+    {
+      "name": "Search field",
+      "kind": "input",
+      "refersTo": "search-field",
+      "description": "The Simple Search demo field with its result rows.",
+      "html": "<div class=\"ds-search\"><label class=\"ds-search-field\"><input type=\"search\" placeholder=\"ㅈㄱㅅ\" aria-label=\"Search\"></label><ol class=\"ds-search-results\"><li class=\"is-first\"><span><mark>정관사</mark>_없는_언어_비교.pdf</span><span class=\"kind\">PDF</span></li><li><span>Objectivity_Daston_Galison.pdf</span><span class=\"kind\">PDF</span></li></ol></div>",
+      "css": ".ds-search{background:#FFFDF7;border:1px solid #635686;max-width:560px;font-family:Pretendard,sans-serif;color:#242923}.ds-search-field{display:block;padding:14px 18px;border-bottom:1px solid #CECFC3}.ds-search-field input{width:100%;border:0;background:transparent;font:500 18px/1.4 Pretendard,sans-serif;outline:none;caret-color:#635686;color:#242923}.ds-search-field input::placeholder{color:#60665D}.ds-search-field:focus-within{box-shadow:inset 0 -2px 0 #635686}.ds-search-results{list-style:none;margin:0;padding:8px 0}.ds-search-results li{display:flex;justify-content:space-between;gap:16px;padding:9px 18px;font-size:14px}.ds-search-results li.is-first{background:#EFEBFF}.ds-search-results mark{background:none;color:#635686;font-weight:700}.ds-search-results .kind{font:600 11px/1.4 Manrope,sans-serif;letter-spacing:.05em;color:#60665D}"
+    },
+    {
+      "name": "Header navigation",
+      "kind": "nav",
+      "refersTo": "nav-cta",
+      "description": "Wordmark with the grid mark, links, the outlined action and the language button.",
+      "html": "<header class=\"ds-header\"><a class=\"ds-wordmark\" href=\"#\"><svg viewBox=\"0 0 128 128\" aria-hidden=\"true\"><path d=\"M80 112H16V16H112V80H80V112ZM48 16V112M80 16V80M16 48H112M16 80H80\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"8\"/><rect x=\"98\" y=\"98\" width=\"14\" height=\"14\" fill=\"currentColor\"/></svg><span>monoon works</span></a><nav class=\"ds-nav\"><a href=\"#\">Flow</a><a href=\"#\">Claude</a><a class=\"ds-nav-cta\" href=\"#\">Join the beta</a><button class=\"ds-lang\" type=\"button\">KO</button></nav></header>",
+      "css": ".ds-header{height:88px;display:flex;align-items:center;justify-content:space-between;gap:24px;border-bottom:1px solid #CECFC3;font-family:Pretendard,sans-serif;color:#242923}.ds-wordmark{display:inline-flex;align-items:center;gap:12px;text-decoration:none;font:700 21px/1 Manrope,sans-serif;letter-spacing:-.055em;color:#242923}.ds-wordmark svg{width:30px;height:30px;color:#B44B34}.ds-nav{display:flex;align-items:center;gap:26px;font-size:14px}.ds-nav a{color:#242923;text-decoration:none}.ds-nav a:hover{text-decoration:underline;text-underline-offset:5px}.ds-nav-cta{display:inline-flex;align-items:center;min-height:42px;padding:0 16px;border:1px solid #242923}.ds-nav-cta:hover{background:#242923;color:#FFFDF7;text-decoration:none!important}.ds-lang{border:1px solid #CECFC3;background:transparent;width:44px;height:44px;font:600 12px/1 Manrope,sans-serif;color:#242923;cursor:pointer}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Grid With an Open Corner",
+    "overview": "The site is built from the logo’s own structure: a 모눈 (worksheet grid) has places, it has room, and it has one dot for the work in hand. Warm paper carries almost everything; ink does the reading; a single cinnabar signature marks what is live right now — the dot on the hero board, the thread that runs down the left rail as the visitor scrolls, the active state, and the one band that asks for action. Each of the five tools owns one colour and uses it inside its own region, never as a page-wide accent.\n\nThe page is calm and dense in the way a study desk is: thin rules, full-width ledger rows instead of cards, real application captures set edge to edge inside hairline frames, and one authored motion rather than scattered effects. Korean and English share the same layout; Korean headings switch from Manrope to Pretendard and keep words unbroken.",
+    "keyCharacteristics": [
+      "Paper ground, ink text, cinnabar reserved for the live signature",
+      "Five product colours that fill their own regions (tiles, frames, markers, carets)",
+      "Manrope for English display and labels, Pretendard for Korean and body",
+      "Stroke-drawn marks from the brand book, drawn in by their strokes",
+      "Ledger rows and hairline rules; no cards, no shadows at rest",
+      "One authored moment: the board, the dot, and the thread"
+    ],
+    "rules": [
+      { "name": "The Signature Rule", "body": "Cinnabar marks what is live: the dot, the thread, the active state, the beta band. A heading, a label or a link is never cinnabar.", "section": "colors" },
+      { "name": "The Own-Region Rule", "body": "A product colour appears only inside that product’s region: its tile, its frame, its markers. It never leaks into another section or into page chrome.", "section": "colors" },
+      { "name": "The Calm Capture Rule", "body": "Application captures sit inside a hairline frame in the product’s colour on a sand ground; nothing is painted over them.", "section": "colors" },
+      { "name": "The Two Faces Rule", "body": "Manrope for English headings, the wordmark, numerals and labels; Pretendard for Korean and for all body copy. No third face.", "section": "typography" },
+      { "name": "The Weight-Only Rule", "body": "Emphasis comes from weight (600/700) or size, never from colour, italics or gradients.", "section": "typography" },
+      { "name": "The Flat Desk Rule", "body": "No shadows at rest. A rule, a ground change or a colour change does the separating.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do keep cinnabar for the dot, the thread, active states and the beta band; use the product’s own colour inside its region.",
+      "Do set English headings in Manrope 700 at −0.04em and Korean headings in Pretendard 700 with word-break: keep-all.",
+      "Do separate with 1px rules, ground changes and whitespace (section spacing clamp(80px, 9vw, 140px); more space above a heading than below).",
+      "Do show real captures edge to edge in a 1px frame coloured by the product, with a caption that says what the capture is.",
+      "Do build motion from the board’s grammar: stroke draw, travel along grid lines, clip wipes, streamed text; always with a settled reduced-motion state."
+    ],
+    "donts": [
+      "Don't add cards, card grids, drop shadows at rest, or hairline-plus-shadow containers.",
+      "Don't use kickers or eyebrow labels above headings; the identity row (tile + name + role) is the only thing that precedes a product heading.",
+      "Don't use uppercase labels, gradient text, glyph or emoji icons; icons are stroke-drawn SVG in the marks’ weight.",
+      "Don't let a product colour appear outside its own section, or cinnabar inside a heading, label or link.",
+      "Don't paint the grid as page decoration; it belongs to the board and the logo."
+    ]
+  }
+}
