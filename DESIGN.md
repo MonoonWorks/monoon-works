@@ -157,7 +157,7 @@ Paper and ink carry the page; cinnabar is the signature; five tool colours each 
 
 ### Hierarchy
 - **Display** (700, clamp(46px, 5.6vw, 84px), 1.02, −0.04em): the hero statement only. Korean: clamp(42px, 5vw, 76px), 1.14, Pretendard.
-- **Headline** (700, clamp(34px, 4.2vw, 60px), 1.1, −0.04em): section statements (“A source has a whole story.”). Korean headings use Pretendard 700 at line-height 1.2 with `word-break: keep-all`.
+- **Headline** (700, clamp(34px, 4.2vw, 60px), −0.04em): section statements (“A source has a whole story.”). The hero h1 sits at line-height 1.1 (1.15 in Korean); h2–h4 at 1.32 so wrapped lines keep air. Korean headings use Pretendard 700 with `word-break: keep-all`.
 - **Title** (700, clamp(24px, 2.4vw, 34px), 1.1): product-row headings and ledger headings.
 - **Body** (400, 16px, 1.7; 17px in product copy): running text, measure capped at 66ch.
 - **Label** (600, 11–12px, 1.4, +0.07em in English, 0 in Korean): board row labels, tile names, the “Selected passage” kinds, timeline dates, result kinds. Never uppercase.
