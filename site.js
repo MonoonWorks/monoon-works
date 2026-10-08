@@ -44,7 +44,7 @@ const ko = {
 'conn.title':'하나의 문헌이 갈피와 새김을 오갑니다.',
 'scene1.t':'갈피에 기록을 둔다','scene1.d':'서지정보, 첨부파일, 전사와 자료별 메모가 기록에 남습니다. 자료가 무엇인지뿐 아니라 어디서 왔고 어떻게 읽었는지까지.',
 'scene2.t':'새김으로 가져온다','scene2.d':'새김의 문헌 목록에서 갈피를 검색해 기록을 연결합니다. 서지정보가 함께 오고, 원래 기록으로 돌아가는 링크가 생깁니다.',
-'scene3.t':'읽고, 적고, 돌아간다','scene3.d':'새김에서 독서 메모와 쪽수 인용구를 씁니다. “Archive linked”가 연결을 보여 주고, “Open Archive”로 원래 기록에 돌아갑니다.',
+'scene3.t':'읽고, 적고, 돌아간다','scene3.d':'새김에서 독서 메모와 쪽수 인용구를 씁니다. “Archive linked”가 연결을 보여 주고, “Open Archive”로 갈피의 기록에 돌아갑니다.',
 'conn.scope':'연결이 전달하는 것은 서지정보와 기록으로 돌아가는 링크입니다. 원본 파일, OCR·전사, 갈피의 메모는 새김으로 복사·동기화되지 않습니다.',
 'archive.m1':'문헌 기록','archive.m2':'원문 파일','archive.m3':'구절','archive.m4':'맥락','archive.mapnote':'원본에서 연결되어, 언제든 돌아갈 수 있도록.',
 'qa.passage':'선택한 구절 · 489쪽','qa.question':'나의 질문','qa.answer':'답변 · 문장마다 근거 쪽',
@@ -52,7 +52,7 @@ const ko = {
 'ask.title':'구절을 묻고, 쪽수는 그대로.','ask.lead':'구절을 선택해 물으면 쉬운 말로 답이 오고, 문장마다 근거가 된 쪽이 붙어 원문과 대조할 수 있습니다.','ask.copy':'정리도 같은 방식입니다. 한 번에 최대 40쪽을 섹션별로. 범위 안의 쪽 텍스트, 질문, 직접 고른 그림 영역만 보내고 PDF 파일·하이라이트·메모는 보내지 않습니다. 이 Mac의 모델만으로도 실행할 수 있습니다.','ask.planned':'계획 중: 선택한 구절·쪽 번역.',
 'simple.title':'Simple.<br>필요한 일에 곧바로.','simple.copy':'읽고, 쓰고, 찾는 세 가지 동작. 같은 문서의 형태, 같은 이름의 리듬으로 묶은 세 개의 작은 macOS 도구입니다.',
 'pdf.sub':'본문 옆에 미주를 두고 읽는 macOS 리더','pdf.title':'본문을 놓치지 않고, 미주까지.','pdf.lead':'본문은 읽던 쪽에 두고, 다른 쪽을 보여 주는 두 번째 창에서 미주를 엽니다.',
-'pdf.copy':'목차로 장 사이를 이동하고, 읽던 자리를 유지하며, 문서에 인용구와 노트를 남깁니다.','pdf.caption':'본문 1쪽과 미주 10쪽을 나란히.',
+'pdf.copy':'목차로 장 사이를 이동하고, 읽던 자리를 유지하며, 문서에 인용구와 노트를 남깁니다.','pdf.caption':'본문 1쪽과 미주 10쪽을 한 창에.',
 'note.sub':'리치텍스트와 Markdown을 오가는 로컬 노트','note.title':'떠오른 문장을 바로, 내 파일로.','note.lead':'한 줄에서 시작해, 생각에 구조가 필요할 때 제목·체크리스트·표·인용을 더합니다.',
 'note.copy':'리치 텍스트와 Markdown을 오가며 쓰고, 태그와 검색으로 다시 찾고, 로컬 Markdown 파일을 열거나 노트를 내보내 다른 도구에서 이어갑니다.','note.editor':'리치텍스트','note.caption':'같은 노트의 리치텍스트·Markdown 화면.',
 'search.sub':'메뉴 막대에서 파일명·초성으로 찾기','search.title':'기억나는 이름으로, 바로 그 파일.','search.lead':'이름의 일부나 한글 초성만 쳐도 파일이 나타납니다. 오른쪽에서 직접 해 보세요.',
@@ -92,7 +92,7 @@ const stages = [
  {en:'Place reading, research, writing, seminars and meetings in the week, each as what it is. The plan shows where the project’s time actually goes, and where the next session starts.',ko:'읽기, 자료 조사, 집필, 세미나, 회의를 각각 그 활동으로 한 주에 배치합니다. 계획은 프로젝트의 시간이 실제로 어디로 가는지, 다음 작업이 어디서 시작하는지 보여 줍니다.',cap:{en:'Weekly plan · reading, research, writing, class, meeting and administration · demonstration project',ko:'주간 계획 · 읽기·조사·집필·수업·회의·행정 · 예시 프로젝트'}}
 ];
 const imageLabels = {
- 'flow-library':{en:'Saegim — library · Academic Neutral',ko:'새김 — 문헌 목록 · Academic Neutral'},'flow-library-forest':{en:'Saegim — library · Deep Forest',ko:'새김 — 문헌 목록 · Deep Forest'},'flow-library-eink':{en:'Saegim — library · Simple E-Ink',ko:'새김 — 문헌 목록 · Simple E-Ink'},'flow-linked-reading':{en:'Saegim — reading record linked from Galpi',ko:'새김 — 갈피에서 연결한 문헌 읽기'},'flow-archive-import':{en:'Saegim — import from Galpi',ko:'새김 — 갈피에서 가져오기'},'flow-notes':{en:'Saegim — research notes',ko:'새김 — 연구 노트'},
+ 'flow-library':{en:'Saegim — library · Academic Neutral',ko:'새김 — 문헌 목록 · Academic Neutral'},'flow-library-forest':{en:'Saegim — library · Deep Forest',ko:'새김 — 문헌 목록 · Deep Forest'},'flow-library-eink':{en:'Saegim — library · Simple E-Ink',ko:'새김 — 문헌 목록 · Simple E-Ink'},'flow-linked-reading':{en:'Saegim — reading record linked from Galpi',ko:'새김 — 갈피에서 연결한 문헌 읽기'},'flow-archive-import':{en:'Saegim — import from Galpi',ko:'새김 — 갈피에서 가져오기'},'archive-return':{en:'Galpi — back on the record after Open Archive',ko:'갈피 — Open Archive로 돌아온 기록'},'flow-notes':{en:'Saegim — research notes',ko:'새김 — 연구 노트'},
  'flow-manuscript':{en:'Saegim — chapter writing',ko:'새김 — 원고'},'flow-week':{en:'Saegim — weekly planning',ko:'새김 — 주간 계획'},
  'archive-library':{en:'Galpi — source library',ko:'갈피 — 자료 라이브러리'},
  'simple-pdf':{en:'Simple PDF — body and endnotes',ko:'Simple PDF — 본문과 미주'},'note-editor':{en:'Simple Note — rich text',ko:'Simple Note — 리치텍스트'},
