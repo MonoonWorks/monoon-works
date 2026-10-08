@@ -164,7 +164,7 @@ html[lang=ko] .archive-map div{font-family:var(--body);font-size:19px}
 .simple-row .figure{margin-top:0}
 .note-tabs{display:flex;gap:18px;margin-bottom:12px}.note-tab{background:none;border:0;border-bottom:2px solid transparent;min-height:44px;padding:4px 0;color:var(--muted);font-size:13px}.note-tab[aria-pressed=true]{color:var(--ink);border-color:var(--note)}
 .frame.search-frame{background:var(--light);padding:clamp(16px,3vw,40px)}
-.simple-row .pdf-link{display:inline-block;margin-top:18px;font-size:14px}
+.simple-row.sub-row{border-top:1px dashed var(--rule);padding-top:36px}.simple-row .planned{margin-top:16px;font-size:13px;color:var(--muted)}.qa-figure{margin-top:0}
 /* roadmap */
 .roadmap{padding-top:var(--space)}
 .roadmap-head{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(28px,5vw,72px);align-items:end}

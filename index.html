@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#F4F1E9">
-<meta name="description" content="Monoon Works makes research software for the humanities and social sciences: Saegim for reading, notes, writing and planning, Galpi for sources, and Simple PDF with page-cited Claude answers.">
+<meta name="description" content="Monoon Works makes research software for the humanities and social sciences: Saegim for reading, notes, writing and planning, Galpi for sources, and Simple PDF with page-cited answers.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Monoon Works">
 <meta property="og:title" content="Monoon Works — A place to think. Room to continue.">
-<meta property="og:description" content="Research software for the humanities and social sciences. Saegim connects reading, notes, writing and planning; in Simple PDF, Claude answers with the page behind every sentence.">
+<meta property="og:description" content="Research software for the humanities and social sciences. Saegim connects reading, notes, writing and planning; in Simple PDF, answers carry the page behind every sentence.">
 <meta property="og:url" content="https://monoonworks.com/">
 <meta property="og:image" content="https://monoonworks.com/images/flow-library.webp">
 <meta name="twitter:card" content="summary_large_image">
@@ -33,7 +33,7 @@
 <div class="wrap">
 <header class="site-header">
 <a class="wordmark" href="#top" aria-label="Monoon Works home"><svg class="mark"><use href="#m-monoon"/></svg><span>monoon works</span></a>
-<nav class="site-nav" aria-label="Main navigation"><a href="#flow">Saegim</a><a href="#claude">Claude</a><a href="#simple" data-key="nav.tools">Tools</a><a href="#roadmap" data-key="nav.roadmap">Roadmap</a><a href="#beta" class="nav-cta" data-key="nav.beta">Join the beta</a><button type="button" class="lang" aria-label="한국어로 전환">KO</button></nav>
+<nav class="site-nav" aria-label="Main navigation"><a href="#flow">Saegim</a><a href="#archive">Galpi</a><a href="#simple" data-key="nav.tools">Tools</a><a href="#roadmap" data-key="nav.roadmap">Roadmap</a><a href="#beta" class="nav-cta" data-key="nav.beta">Join the beta</a><button type="button" class="lang" aria-label="한국어로 전환">KO</button></nav>
 </header>
 </div>
 <main id="main">
@@ -57,7 +57,7 @@
 </div>
 <figcaption class="board-caption"><span id="board-label" aria-live="polite"><strong data-key="board.idle.t">Five tools, one grid.</strong> <span data-key="board.idle.d">The dot is the work in hand.</span></span><button type="button" class="motion-toggle" aria-pressed="false" data-key="motion.pause">Pause motion</button></figcaption>
 </figure>
-<div class="hero-foot"><p class="status"><i aria-hidden="true"></i><span data-key="status">Private pilot now · public beta planned for H1 2027</span></p><a href="#claude" data-key="hero.claude">New in the pilot: Claude in Simple PDF ↗</a></div>
+<div class="hero-foot"><p class="status"><i aria-hidden="true"></i><span data-key="status">Private pilot now · public beta planned for H1 2027</span></p><a href="#ask" data-key="hero.ask">New in the pilot: page-cited answers in Simple PDF ↗</a></div>
 </section>
 
 <section class="principles" id="principles" aria-labelledby="principles-title">
@@ -134,7 +134,7 @@
 </div>
 <div class="workbench-foot">
 <div><strong data-key="flow.word.t">Continue in Microsoft Word</strong><span data-key="flow.word.d">Citations, footnotes and bibliographies through the companion add-in.</span></div>
-<div><strong data-key="flow.plan.t">Planned</strong><span data-key="flow.plan.d">An optional Claude connection to compare claims across the notes you select and to check a draft paragraph against its sources. Nothing is converted or synced automatically today.</span></div>
+<div><strong data-key="flow.plan.t">Planned</strong><span data-key="flow.plan.d">Compare claims across the notes you select, and check a draft paragraph against its sources, with an optional Claude connection. Nothing is converted or synced automatically today.</span></div>
 </div>
 </div>
 </section>
@@ -160,39 +160,27 @@
 </div>
 </section>
 
-<section class="product" id="claude" aria-labelledby="claude-title">
-<div class="product-head">
-<div><div class="product-id"><span class="tile simple pdf" aria-hidden="true"><svg><use href="#m-pdf"/></svg></span><span>Simple PDF<small data-key="claude.sub">A macOS reader with the endnotes beside the text</small></span></div><h2 id="claude-title" data-key="claude.title">Ask the paper.<br>Keep the page.</h2><p class="claude-status"><i aria-hidden="true"></i><span data-key="claude.status">In the pilot since October 2026</span></p></div>
-<div class="product-copy"><p data-key="claude.copy1">Select a passage in Simple PDF and ask about it. Claude explains it in plain language and attaches the page each sentence rests on, so every answer can be checked against the original.</p><p data-key="claude.copy2">Summaries work the same way: up to forty pages at a time, section by section, with page references and a short map of how the argument moves.</p></div>
-</div>
-<div class="claude-grid">
-<figure class="figure" style="margin-top:0">
-<div class="qa-stack">
-<div class="qa-card qa-passage"><span class="qa-kind" data-key="qa.passage">Selected passage · p. 489</span><blockquote lang="en">“It is interesting to contemplate <mark>an entangled bank</mark>, clothed with many plants of many kinds …”</blockquote><span class="qa-source">Darwin, <i>On the Origin of Species</i>, 1859</span></div>
-<div class="qa-card qa-question"><span class="qa-kind" data-key="qa.question">Your question</span><p lang="ko">‘얽힌 강둑’ 비유로 무엇을 말하려는 걸까?</p></div>
-<div class="qa-card qa-answer"><span class="qa-kind" data-key="qa.answer">Answer · every sentence with its source</span>
-<p lang="ko">서로 매우 다르고 복잡하게 의존하는 생물들이 모두 주변에서 작용하는 법칙으로 만들어졌다는 점을, 강둑 하나의 장면으로 보여 준다. <a class="cite" href="#claude">p. 489</a></p>
-<p lang="ko">식물·새·곤충·벌레를 차례로 들어, 결론부의 논지를 독자가 직접 떠올릴 수 있는 풍경으로 바꾼다. <a class="cite" href="#claude">p. 489</a></p>
-<p lang="ko" class="qa-uncertain">앞 장들과의 연결은 제공된 발췌만으로 확인할 수 없음.</p></div>
-</div>
-<figcaption class="caption"><span data-key="qa.caption">Illustration of the passage flow · Simple PDF currently answers in Korean.</span></figcaption>
-</figure>
-<ul class="facts">
-<li class="reveal"><strong data-key="fact1.t">Grounded in the text</strong><span data-key="fact1.d">Answers use only the pages you give them. Numbers stay as printed, and what the excerpt cannot support is said plainly.</span></li>
-<li class="reveal"><strong data-key="fact2.t">You choose what is sent</strong><span data-key="fact2.d">Only the page text in range, your question and any figure region you select go to the Claude API — never the PDF file, your highlights or your memos.</span></li>
-<li class="reveal"><strong data-key="fact3.t">Local when you want it</strong><span data-key="fact3.d">Switch the same panel to a model that runs on your Mac, and nothing leaves it.</span></li>
-<li class="reveal"><strong data-key="fact4.t">Kept in your Keychain</strong><span data-key="fact4.d">The API key is stored in the macOS Keychain on that device and checked before it is saved.</span></li>
-</ul>
-</div>
-<div class="claude-next reveal"><p data-key="claude.next">Planned next with Claude</p><ul><li data-key="next1">Saegim — compare claims across the notes you select</li><li data-key="next2">Saegim — check a draft paragraph against its sources</li><li data-key="next3">Simple PDF — translate a selected passage or page</li></ul></div>
-</section>
 
 <section class="product" id="simple" aria-labelledby="simple-title">
 <div class="simple-head"><h2 id="simple-title" data-key="simple.title">Simple.<br>Straight to the task.</h2><p data-key="simple.copy">Reading, writing and finding: three everyday motions, three small macOS tools that share one document shape and one way of naming things.</p></div>
 
 <article class="simple-row" id="simple-pdf">
-<div><div class="product-id"><span class="tile simple pdf" aria-hidden="true"><svg><use href="#m-pdf"/></svg></span><span>Simple PDF<small data-key="pdf.sub">A macOS reader with the endnotes beside the text</small></span></div><h3 data-key="pdf.title">Read the text without losing the endnotes.</h3><div class="copy"><p class="lead" data-key="pdf.lead">The body stays on its page while the notes open in a second pane that can show a different page.</p><p data-key="pdf.copy">Move between chapters through the outline, keep your reading position, and leave quotations and notes on the document. The Claude engine above lives in this reader.</p><a class="pdf-link" href="#claude" data-key="pdf.link">Ask Claude about a passage ↗</a></div></div>
+<div><div class="product-id"><span class="tile simple pdf" aria-hidden="true"><svg><use href="#m-pdf"/></svg></span><span>Simple PDF<small data-key="pdf.sub">A macOS reader with the endnotes beside the text</small></span></div><h3 data-key="pdf.title">Read the text without losing the endnotes.</h3><div class="copy"><p class="lead" data-key="pdf.lead">The body stays on its page while the notes open in a second pane that can show a different page.</p><p data-key="pdf.copy">Move between chapters through the outline, keep your reading position, and leave quotations and notes on the document.</p></div></div>
 <figure class="figure reveal"><div class="frame"><button type="button" data-image="images/simple-pdf.webp" aria-label="Enlarge Simple PDF"><img src="images/simple-pdf.webp" width="2000" height="1808" alt="Simple PDF with the body on page 1 and the endnotes on page 10 in a second pane." loading="lazy"></button></div><figcaption class="caption"><span data-key="pdf.caption">Body on page 1, endnotes on page 10.</span></figcaption></figure>
+</article>
+<article class="simple-row sub-row" id="ask">
+<div><h3 data-key="ask.title">Ask about a passage, and keep the page.</h3><div class="copy"><p class="lead" data-key="ask.lead">Select a passage and ask. The answer comes back in plain language, and every sentence carries the page it rests on, so it can be checked against the original.</p><p data-key="ask.copy">Summaries work the same way, up to forty pages at a time, section by section. Only the page text in range, your question and any figure region you select are sent; the PDF file, highlights and memos are not. Runs on Claude or on a model on your Mac, and the key stays in your Keychain.</p><p class="planned" data-key="ask.planned">Planned: translation of a selected passage or page.</p></div></div>
+<figure class="figure qa-figure reveal">
+<div class="qa-stack">
+<div class="qa-card qa-passage"><span class="qa-kind" data-key="qa.passage">Selected passage · p. 489</span><blockquote lang="en">“It is interesting to contemplate <mark>an entangled bank</mark>, clothed with many plants of many kinds …”</blockquote><span class="qa-source">Darwin, <i>On the Origin of Species</i>, 1859</span></div>
+<div class="qa-card qa-question"><span class="qa-kind" data-key="qa.question">Your question</span><p lang="ko">‘얽힌 강둑’ 비유로 무엇을 말하려는 걸까?</p></div>
+<div class="qa-card qa-answer"><span class="qa-kind" data-key="qa.answer">Answer · every sentence with its source</span>
+<p lang="ko">서로 매우 다르고 복잡하게 의존하는 생물들이 모두 주변에서 작용하는 법칙으로 만들어졌다는 점을, 강둑 하나의 장면으로 보여 준다. <a class="cite" href="#ask">p. 489</a></p>
+<p lang="ko">식물·새·곤충·벌레를 차례로 들어, 결론부의 논지를 독자가 직접 떠올릴 수 있는 풍경으로 바꾼다. <a class="cite" href="#ask">p. 489</a></p>
+<p lang="ko" class="qa-uncertain">앞 장들과의 연결은 제공된 발췌만으로 확인할 수 없음.</p></div>
+</div>
+<figcaption class="caption"><span data-key="qa.caption">Illustration of the passage flow · answers are in Korean today · Claude, or a model on your Mac</span></figcaption>
+</figure>
 </article>
 
 <article class="simple-row" id="simple-note">
@@ -210,9 +198,9 @@
 <div class="roadmap-head"><h2 id="roadmap-title" class="reveal" data-key="roadmap.title">Where it is going.</h2><p class="reveal" data-key="roadmap.copy">Built alongside ongoing research, and tested with researchers before it is offered more widely.</p></div>
 <ol class="timeline">
 <li class="done"><strong data-key="r1.date">Jul 2025</strong><span data-key="r1.t">Development begins</span><p data-key="r1.d">Saegim grows out of a graduate researcher’s own reading and writing.</p></li>
-<li class="now"><strong data-key="r2.date">Now</strong><span data-key="r2.t">Private pilot</span><p data-key="r2.d">Saegim, Galpi and the Simple tools with a small group of researchers. Claude in Simple PDF is tested here first.</p></li>
+<li class="now"><strong data-key="r2.date">Now</strong><span data-key="r2.t">Private pilot</span><p data-key="r2.d">Saegim, Galpi and the Simple tools with a small group of researchers. New features, like page-cited answers in Simple PDF, are tested here first.</p></li>
 <li><strong data-key="r3.date">H1 2027</strong><span data-key="r3.t">Public beta</span><p data-key="r3.d">Saegim and the companion tools open to the beta list.</p></li>
-<li><strong data-key="r4.date">Next</strong><span data-key="r4.t">Claude in Saegim</span><p data-key="r4.d">Compare claims across notes and check drafts against their sources.</p></li>
+<li><strong data-key="r4.date">Next</strong><span data-key="r4.t">Notes and drafts, checked</span><p data-key="r4.d">In Saegim: compare claims across notes and check a draft against its sources.</p></li>
 </ol>
 </section>
 
