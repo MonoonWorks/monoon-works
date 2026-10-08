@@ -28,7 +28,6 @@ const ko = {
 'sheet.source':'갈피 · 자료 기록','sheet.collection':'컬렉션','sheet.tags':'태그',
 'sheet.note':'새김 · 독서 메모','sheet.linked':'Archive linked','sheet.connection':'연결','sheet.connection.d':'과학 도감과 정책 브리핑 차트를 나란히','sheet.next':'다음','sheet.next.d':'자료 맥락 확인 후 2장으로',
 'sheet.chapter':'새김 · 논증 지도','sheet.claim':'주장','sheet.claim.d':'권위는 문서들을 거치며 조립되었다','sheet.evidence':'필요한 근거','sheet.evidence.d':'수정 기록, 회의록','sheet.counter':'반론','sheet.counter.d':'서류 작업은 단지 하류가 아니다',
-'path.caption':'아래 화면 속 프로젝트에서 가져온 장면',
 'flow.name':'새김','flow.sub':'읽기·노트·집필·계획을 한 작업공간에','flow.title':'연구의 여러 시간을 한자리에.',
 'flow.copy1':'새김은 일정과 읽기, 노트와 집필을 오가며 긴 연구를 이어 갑니다. 서로 다른 속도로 진행되는 작업을 한 공간에서 살필 수 있습니다.',
 'flow.copy2':'인용구에는 쪽 번호가 남고, 노트는 출처와 대조할 수 있으며, 장별 초고는 그것을 가능하게 한 근거 옆에 머뭅니다.',
@@ -40,7 +39,6 @@ const ko = {
 'archive.title':'자료에는<br>맥락이 있습니다.',
 'archive.copy1':'사진, 스캔, PDF와 서지정보가 그 의미를 만드는 정보와 함께 남습니다. 기여자, 날짜, 식별자, 전사와 자료에 대한 노트까지.',
 'archive.copy2':'Zotero·Juris-M 자료와 Tropy 내보내기를 가져오고, 컬렉션으로 정리하고, 메타데이터와 로컬 OCR 텍스트를 검색합니다. 인용 정보는 원본으로 돌아갈 길과 함께 새김으로 가져옵니다.',
-'archive.caption':'갈피 · 앱 안의 이름은 아직 Academia Archive · 현재 한국어 인터페이스.',
 'conn.title':'하나의 문헌이 갈피와 새김을 오갑니다.',
 'scene1.t':'갈피에 기록을 둔다','scene1.d':'서지정보, 첨부파일, 전사와 자료별 메모가 기록에 남습니다. 자료가 무엇인지뿐 아니라 어디서 왔고 어떻게 읽었는지까지.',
 'scene2.t':'새김으로 가져온다','scene2.d':'새김의 문헌 목록에서 갈피를 검색해 기록을 연결합니다. 서지정보가 함께 오고, 원래 기록으로 돌아가는 링크가 생깁니다.',
@@ -48,16 +46,13 @@ const ko = {
 'conn.scope':'연결이 전달하는 것은 서지정보와 기록으로 돌아가는 링크입니다. 원본 파일, OCR·전사, 갈피의 메모는 새김으로 복사·동기화되지 않습니다.',
 'archive.m1':'문헌 기록','archive.m2':'원문 파일','archive.m3':'구절','archive.m4':'맥락','archive.mapnote':'원본에서 연결되어, 언제든 돌아갈 수 있도록.',
 'qa.passage':'선택한 구절 · 489쪽','qa.question':'나의 질문','qa.answer':'답변 · 문장마다 근거 쪽',
-'qa.caption':'구절 질문 흐름을 표현한 그래픽 · 답은 현재 한국어',
 'ask.title':'구절을 묻고, 쪽수는 그대로.','ask.lead':'구절을 선택해 물으면 쉬운 말로 답이 오고, 문장마다 근거가 된 쪽이 붙어 원문과 대조할 수 있습니다.','ask.copy':'정리도 같은 방식입니다. 한 번에 최대 40쪽을 섹션별로. 범위 안의 쪽 텍스트, 질문, 직접 고른 그림 영역만 보내고 PDF 파일·하이라이트·메모는 보내지 않습니다. 이 Mac의 모델만으로도 실행할 수 있습니다.','ask.planned':'계획 중: 선택한 구절·쪽 번역.',
 'simple.title':'Simple.<br>필요한 일에 곧바로.','simple.copy':'읽고, 쓰고, 찾는 세 가지 동작. 같은 문서의 형태, 같은 이름의 리듬으로 묶은 세 개의 작은 macOS 도구입니다.',
 'pdf.sub':'본문 옆에 미주를 두고 읽는 macOS 리더','pdf.title':'본문을 놓치지 않고, 미주까지.','pdf.lead':'본문은 읽던 쪽에 두고, 다른 쪽을 보여 주는 두 번째 창에서 미주를 엽니다.',
-'pdf.copy':'목차로 장 사이를 이동하고, 읽던 자리를 유지하며, 문서에 인용구와 노트를 남깁니다.','pdf.caption':'본문 1쪽과 미주 10쪽을 한 창에.',
-'note.sub':'리치텍스트와 Markdown을 오가는 로컬 노트','note.title':'떠오른 문장을 바로, 내 파일로.','note.lead':'한 줄에서 시작해, 생각에 구조가 필요할 때 제목·체크리스트·표·인용을 더합니다.',
-'note.copy':'리치 텍스트와 Markdown을 오가며 쓰고, 태그와 검색으로 다시 찾고, 로컬 Markdown 파일을 열거나 노트를 내보내 다른 도구에서 이어갑니다.','note.editor':'리치텍스트','note.caption':'같은 노트의 리치텍스트·Markdown 화면.',
-'search.sub':'메뉴 막대에서 파일명·초성으로 찾기','search.title':'기억나는 이름으로, 바로 그 파일.','search.lead':'이름의 일부나 한글 초성만 쳐도 파일이 나타납니다. 오른쪽에서 직접 해 보세요.',
+'pdf.copy':'목차로 장 사이를 이동하고, 읽던 자리를 유지하며, 문서에 인용구와 노트를 남깁니다.','note.sub':'리치텍스트와 Markdown을 오가는 로컬 노트','note.title':'떠오른 문장을 바로, 내 파일로.','note.lead':'한 줄에서 시작해, 생각에 구조가 필요할 때 제목·체크리스트·표·인용을 더합니다.',
+'note.copy':'리치 텍스트와 Markdown을 오가며 쓰고, 태그와 검색으로 다시 찾고, 로컬 Markdown 파일을 열거나 노트를 내보내 다른 도구에서 이어갑니다.','note.editor':'리치텍스트','search.sub':'메뉴 막대에서 파일명·초성으로 찾기','search.title':'기억나는 이름으로, 바로 그 파일.','search.lead':'이름의 일부나 한글 초성만 쳐도 파일이 나타납니다. 오른쪽에서 직접 해 보세요.',
 'search.copy':'파일명과 메타데이터만 색인하며 문서 본문은 읽지 않습니다. 종류로 좁히고, Quick Look으로 미리 보고, 열거나 Finder에서 보기까지 키보드로 합니다.',
-'search.hint':'예시 파일명으로 직접 해 보세요 · 초성과 부분 이름 모두 일치합니다.','search.caption':'이 페이지에서 바로 동작하는 일치 규칙 · 앱 자체는 macOS 메뉴 막대에서 실행됩니다.','search.shot':'앱 화면 보기 ↗',
+'search.shot':'앱 화면 보기 ↗',
 'roadmap.title':'앞으로의 길.','roadmap.copy':'진행 중인 연구와 나란히 만들고, 더 넓게 내놓기 전에 연구자들과 먼저 시험합니다.',
 'r1.date':'2025년 7월','r1.t':'개발 시작','r1.d':'대학원 연구자의 읽기와 쓰기에서 새김이 시작됩니다.',
 'r2.date':'지금','r2.t':'비공개 파일럿','r2.d':'새김, 갈피와 Simple 도구들을 소수의 연구자와 함께 씁니다. Simple PDF의 쪽수 붙는 답변 같은 새 기능은 여기서 먼저 시험합니다.',
@@ -287,7 +282,7 @@ function renderSearch(q){
   const n = r.f.n, h = r.m ? `${esc(n.slice(0,r.m[0]))}<mark>${esc(n.slice(r.m[0],r.m[1]))}</mark>${esc(n.slice(r.m[1]))}` : esc(n);
   return `<li${i===0&&query?' class="is-first"':''}><span class="name">${h}</span><span class="kind">${r.f.k}</span></li>`;
  }).join('') || `<li class="empty">${language==='ko'?'일치하는 파일이 없습니다':'No matching files'}</li>`;
- $('#search-hint').hidden = Boolean(query);
+
 }
 const esc = s => s.replace(/[&<>]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
 $('#search-input').addEventListener('input', e => renderSearch(e.target.value));
