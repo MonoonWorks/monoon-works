@@ -21,6 +21,14 @@ const ko = {
 'p2.t':'맥락을 가까이.','p2.d':'원본과 주석, 문장과 출처, 계획과 기록을 함께 이해할 수 있도록 자리를 잡습니다.',
 'p3.t':'다시 이어가기 쉽게.','p3.d':'읽던 위치와 작업의 상태가 남도록 돕습니다. 오늘의 작업이 내일의 시작점이 됩니다.',
 'principles.note':'모눈에는 자리가 있고, 여백이 있습니다. 도구가 바탕을 만들면, 그 위의 생각은 사람이 이어 갑니다.',
+'path.title':'자료에서,<br>생각으로, 장으로.','path.lead':'연구는 한 도구 안에 머물지 않습니다. 자료를 찾아 두고, 질문을 노트에서 키우고, 논증을 장으로 세웁니다. 모눈웍스는 이 세 자리를 가까이 둡니다.',
+'path.s1.t':'자료 찾기','path.s1.d':'누가 만들었고, 어디서 왔고, 어떻게 읽었는지까지 기록에 남깁니다.','path.s1.tool':'갈피',
+'path.s2.t':'질문 따라가기','path.s2.d':'출처 옆에 질문을 적고, 그 구절의 쪽수를 함께 붙입니다.','path.s2.tool':'새김 · 읽기와 노트',
+'path.s3.t':'논증 세우기','path.s3.d':'주장과 근거, 반론을 장의 원고로 가져갑니다.','path.s3.tool':'새김 · 원고',
+'sheet.source':'갈피 · 자료 기록','sheet.collection':'컬렉션','sheet.tags':'태그',
+'sheet.note':'새김 · 독서 메모','sheet.linked':'Archive linked','sheet.connection':'연결','sheet.connection.d':'과학 도감과 정책 브리핑 차트를 나란히','sheet.next':'다음','sheet.next.d':'자료 맥락 확인 후 2장으로',
+'sheet.chapter':'새김 · 논증 지도','sheet.claim':'주장','sheet.claim.d':'권위는 문서들을 거치며 조립되었다','sheet.evidence':'필요한 근거','sheet.evidence.d':'수정 기록, 회의록','sheet.counter':'반론','sheet.counter.d':'서류 작업은 단지 하류가 아니다',
+'path.caption':'아래 화면 속 예시 프로젝트로 만든 그래픽',
 'flow.name':'새김','flow.sub':'읽기·노트·집필·계획을 한 작업공간에','flow.title':'연구의 여러 시간을 한자리에.',
 'flow.copy1':'새김은 일정과 읽기, 노트와 집필을 오가며 긴 연구를 이어 갑니다. 서로 다른 속도로 진행되는 작업을 한 공간에서 살필 수 있습니다.',
 'flow.copy2':'인용구에는 쪽 번호가 남고, 노트는 출처와 대조할 수 있으며, 장별 초고는 그것을 가능하게 한 근거 옆에 머뭅니다.',
@@ -301,6 +309,67 @@ function typeDemo(){
  setTimeout(step, 600);
 }
 
+
+/* ---------- path: a source, a question, a chapter ---------- */
+// The sheets sit on the grid; the active one comes forward and opens. The dot —
+// the work in hand — travels the grid lines from sheet to sheet, leaving the thread.
+const pathCanvas = $('.path-canvas'), route = $('.path-route'), routePath = $('.path-route .route'), pathDot = $('.path-dot');
+const sheets = [$('.sheet.source'), $('.sheet.note'), $('.sheet.chapter')];
+let pathScene = 0, pathTimer = null, pathTurns = 0, pathUserPicked = false, pathInView = false, routeLen = [0,0,0], routeAnim = null, dotAnim2 = null;
+// Layout boxes (not transformed rects), so the route does not chase a sheet mid-transition.
+function sheetCorner(el){ return {x: el.offsetLeft + el.offsetWidth - 2, y: el.offsetTop + 2}; }
+function layoutRoute(){
+ const c = pathCanvas.getBoundingClientRect();
+ route.setAttribute('viewBox', `0 0 ${c.width} ${c.height}`);
+ const p = sheets.map(sheetCorner);
+ const d = `M${p[0].x} ${p[0].y} H${p[1].x} V${p[1].y} H${p[2].x} V${p[2].y}`;
+ routePath.setAttribute('d', d);
+ pathDot.style.offsetPath = `path("${d}")`;
+ const seg1 = Math.abs(p[1].x-p[0].x)+Math.abs(p[1].y-p[0].y), seg2 = Math.abs(p[2].x-p[1].x)+Math.abs(p[2].y-p[1].y);
+ routeLen = [0, seg1, seg1+seg2];
+ routePath.style.strokeDasharray = `${seg1+seg2} ${seg1+seg2}`;
+}
+function drawRoute(index, animateIt){
+ const total = routeLen[2] || 1, shown = index === 'all' ? total : routeLen[index];
+ const from = Number(routePath.dataset.shown || 0);
+ routePath.dataset.shown = shown;
+ const pct = v => (v/total*100)+'%';
+ routeAnim?.cancel(); dotAnim2?.cancel();
+ if (animateIt && !reduceMotion.matches && routePath.animate){
+  routeAnim = routePath.animate([{strokeDashoffset: total-from}, {strokeDashoffset: total-shown}], {duration: 1100, easing: 'cubic-bezier(.16,1,.3,1)', fill: 'forwards'});
+  dotAnim2 = pathDot.animate([{offsetDistance: pct(from)}, {offsetDistance: pct(shown)}], {duration: 1100, easing: 'cubic-bezier(.16,1,.3,1)', fill: 'forwards'});
+ } else {
+  routePath.style.strokeDashoffset = total - shown; pathDot.style.offsetDistance = pct(shown);
+ }
+}
+function paintPath(index, animateIt = true){
+ pathScene = index;
+ pathCanvas.dataset.scene = String(index);
+ $$('.path-step').forEach((b,i) => b.setAttribute('aria-pressed', String(i===index)));
+  layoutRoute(); drawRoute(index, animateIt);
+}
+function clearPath(){ if (pathTimer){ clearTimeout(pathTimer); pathTimer = null; } }
+function cyclePath(){
+ clearPath();
+ if (pathUserPicked || !pathInView || document.hidden || reduceMotion.matches) return;
+ pathTimer = setTimeout(() => {
+  const next = (pathScene + 1) % 3;
+  if (next === 0){ pathTurns++; routePath.dataset.shown = 0; }
+  if (pathTurns >= 2){ pathTimer = null; return; }
+  paintPath(next); cyclePath();
+ }, 4200);
+}
+$$('.path-step').forEach(b => b.addEventListener('click', () => { pathUserPicked = true; clearPath(); paintPath(Number(b.dataset.scene)); }));
+if (reduceMotion.matches){ pathCanvas.dataset.scene = 'all'; layoutRoute(); drawRoute('all', false); }
+else paintPath(0, false);
+if ('IntersectionObserver' in window){
+ new IntersectionObserver(entries => {
+  pathInView = entries[0].isIntersecting;
+  if (pathInView && !pathUserPicked && !reduceMotion.matches && !pathTimer) cyclePath(); else if (!pathInView) clearPath();
+ }, {threshold: .35}).observe(pathCanvas);
+}
+document.addEventListener('visibilitychange', () => { if (document.hidden) clearPath(); else if (pathInView) cyclePath(); });
+window.addEventListener('resize', () => { layoutRoute(); drawRoute(pathCanvas.dataset.scene === 'all' ? 'all' : pathScene, false); });
 /* ---------- reveals, streaming answer, timeline ---------- */
 function setTimelineProgress(tl){
  const now = $('li.now', tl); if (!now) return;
