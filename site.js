@@ -28,7 +28,7 @@ const ko = {
 'sheet.source':'갈피 · 자료 기록','sheet.collection':'컬렉션','sheet.tags':'태그',
 'sheet.note':'새김 · 독서 메모','sheet.linked':'Archive linked','sheet.connection':'연결','sheet.connection.d':'과학 도감과 정책 브리핑 차트를 나란히','sheet.next':'다음','sheet.next.d':'자료 맥락 확인 후 2장으로',
 'sheet.chapter':'새김 · 논증 지도','sheet.claim':'주장','sheet.claim.d':'권위는 문서들을 거치며 조립되었다','sheet.evidence':'필요한 근거','sheet.evidence.d':'수정 기록, 회의록','sheet.counter':'반론','sheet.counter.d':'서류 작업은 단지 하류가 아니다',
-'path.caption':'아래 화면 속 예시 프로젝트로 만든 그래픽',
+'path.caption':'아래 화면 속 프로젝트에서 가져온 장면',
 'flow.name':'새김','flow.sub':'읽기·노트·집필·계획을 한 작업공간에','flow.title':'연구의 여러 시간을 한자리에.',
 'flow.copy1':'새김은 일정과 읽기, 노트와 집필을 오가며 긴 연구를 이어 갑니다. 서로 다른 속도로 진행되는 작업을 한 공간에서 살필 수 있습니다.',
 'flow.copy2':'인용구에는 쪽 번호가 남고, 노트는 출처와 대조할 수 있으며, 장별 초고는 그것을 가능하게 한 근거 옆에 머뭅니다.',
@@ -57,7 +57,7 @@ const ko = {
 'note.copy':'리치 텍스트와 Markdown을 오가며 쓰고, 태그와 검색으로 다시 찾고, 로컬 Markdown 파일을 열거나 노트를 내보내 다른 도구에서 이어갑니다.','note.editor':'리치텍스트','note.caption':'같은 노트의 리치텍스트·Markdown 화면.',
 'search.sub':'메뉴 막대에서 파일명·초성으로 찾기','search.title':'기억나는 이름으로, 바로 그 파일.','search.lead':'이름의 일부나 한글 초성만 쳐도 파일이 나타납니다. 오른쪽에서 직접 해 보세요.',
 'search.copy':'파일명과 메타데이터만 색인하며 문서 본문은 읽지 않습니다. 종류로 좁히고, Quick Look으로 미리 보고, 열거나 Finder에서 보기까지 키보드로 합니다.',
-'search.hint':'예시 파일명으로 하는 시연 · 초성과 부분 이름 모두 일치합니다.','search.caption':'일치 규칙의 시연 · 실제 앱은 macOS 메뉴 막대에서 실행됩니다.','search.shot':'앱 화면 보기 ↗',
+'search.hint':'예시 파일명으로 직접 해 보세요 · 초성과 부분 이름 모두 일치합니다.','search.caption':'이 페이지에서 바로 동작하는 일치 규칙 · 앱 자체는 macOS 메뉴 막대에서 실행됩니다.','search.shot':'앱 화면 보기 ↗',
 'roadmap.title':'앞으로의 길.','roadmap.copy':'진행 중인 연구와 나란히 만들고, 더 넓게 내놓기 전에 연구자들과 먼저 시험합니다.',
 'r1.date':'2025년 7월','r1.t':'개발 시작','r1.d':'대학원 연구자의 읽기와 쓰기에서 새김이 시작됩니다.',
 'r2.date':'지금','r2.t':'비공개 파일럿','r2.d':'새김, 갈피와 Simple 도구들을 소수의 연구자와 함께 씁니다. Simple PDF의 쪽수 붙는 답변 같은 새 기능은 여기서 먼저 시험합니다.',
@@ -74,7 +74,7 @@ const ko = {
 'faq3.q':'연구 자료는 어디에 저장되나요?','faq3.a':'새김의 연구 작업 공간은 로컬 저장소를 사용합니다. 갈피도 원문 파일과 데이터베이스를 로컬에 보관합니다. Zotero 가져오기와 같은 선택적 연결은 별도의 설정을 사용합니다.',
 'faq4.q':'Zotero와 Word를 계속 써도 되나요?','faq4.a':'네. 갈피로 Zotero 자료를 가져올 수 있고, 별도 Word 추가 기능에서 문헌 검색, 인용, 각주와 참고문헌 작업을 이어갈 수 있습니다.',
 'faq5.q':'새김과 갈피는 어떻게 함께 쓰나요?','faq5.a':'갈피는 원문 파일과 서지정보, 자료의 맥락을 관리합니다. 새김은 읽기, 연구 노트, 장별 집필과 계획을 연결합니다. 선택한 갈피 자료를 새김에 연결해 사용할 수 있습니다.',
-'shots.note':'화면은 실제 앱이며, 시연용 작업 공간과 공개 서지정보를 사용했습니다. 구절 답변과 검색창은 각 기능의 동작을 보여 주는 그래픽입니다.',
+'shots.note':'화면은 실행 중인 앱 그대로이며, 공개 서지정보를 사용했습니다. 이 페이지의 구절 답변과 검색창은 각 기능이 어떻게 동작하는지 보여 줍니다.',
 'footer.company':'© 2026 Monoon Works · 서울','footer.privacy':'개인정보 안내','footer.top':'맨 위로 ↑'
 };
 const tools = {
@@ -85,11 +85,11 @@ const tools = {
  search:{name:'Simple Search',en:'The name you remember, the file you need.',ko:'기억나는 이름으로, 바로 그 파일.',href:'#simple-search'}
 };
 const stages = [
- {en:'Find the next reading by title, author or tag — Objectivity, Seeing Like a State — and keep its state: collected, to read, reading, finished. The list shows the work in front of you, not only what was saved. Open a record to begin.',ko:'제목·저자·태그로 다음에 읽을 문헌을 찾고(Objectivity, Seeing Like a State…) 수집·읽을 예정·읽는 중·완료 상태를 남깁니다. 목록은 저장한 것이 아니라 지금 할 일을 보여 줍니다. 문헌을 열면 다음 단계입니다.',cap:{en:'Library · public bibliographic records from Zotero · example reading states',ko:'문헌 목록 · Zotero에서 가져온 공개 서지정보 · 예시 읽기 상태'}},
- {en:'Beside the bibliography, write the reading note: the question you bring, how it connects to the project, the next step. Quotations take a page number so the passage can be found again. What you note here is what the research notes build on.',ko:'서지정보 옆에 독서 메모를 씁니다. 가져온 질문, 프로젝트와의 연결, 다음 할 일. 인용구에는 쪽수를 붙여 나중에 그 구절로 돌아갑니다. 여기 적은 것이 연구 노트의 재료가 됩니다.',cap:{en:'Reading record · Objectivity linked from Galpi · the note is a demonstration, not a quotation from the book',ko:'문헌 읽기 · 갈피에서 연결한 Objectivity · 메모는 예시이며 책의 인용문이 아닙니다'}},
- {en:'Set a claim down with the evidence it still needs and the counterpoint it has to meet. Reviewing that structure is how a chapter develops; nothing is turned into a draft automatically.',ko:'주장을 적고, 아직 필요한 근거와 반론을 함께 남깁니다. 이 구조를 검토하며 원고의 장을 발전시킵니다. 자동으로 초고가 되지는 않습니다.',cap:{en:'Research note · “Argument map · Prediction as paperwork” · demonstration project',ko:'연구 노트 · “Argument map · Prediction as paperwork” · 예시 프로젝트'}},
- {en:'Open the chapter in its binder: the structure on the left, the body in the middle, the sources beside it. Notes and writing share one workspace, so the evidence stays within reach while you write.',ko:'바인더에서 장을 엽니다. 왼쪽에 구조, 가운데에 본문, 곁에 문헌. 노트와 집필이 같은 작업 공간에 있어 쓰는 동안 근거가 손닿는 곳에 있습니다.',cap:{en:'Manuscript · “The Paper Trail of Prediction” · demonstration project',ko:'원고 · “The Paper Trail of Prediction” · 예시 프로젝트'}},
- {en:'Place reading, research, writing, seminars and meetings in the week, each as what it is. The plan shows where the project’s time actually goes, and where the next session starts.',ko:'읽기, 자료 조사, 집필, 세미나, 회의를 각각 그 활동으로 한 주에 배치합니다. 계획은 프로젝트의 시간이 실제로 어디로 가는지, 다음 작업이 어디서 시작하는지 보여 줍니다.',cap:{en:'Weekly plan · reading, research, writing, class, meeting and administration · demonstration project',ko:'주간 계획 · 읽기·조사·집필·수업·회의·행정 · 예시 프로젝트'}}
+ {en:'Find the next reading by title, author or tag — Objectivity, Seeing Like a State — and keep its state: collected, to read, reading, finished. The list shows the work in front of you, not only what was saved. Open a record to begin.',ko:'제목·저자·태그로 다음에 읽을 문헌을 찾고(Objectivity, Seeing Like a State…) 수집·읽을 예정·읽는 중·완료 상태를 남깁니다. 목록은 저장한 것이 아니라 지금 할 일을 보여 줍니다. 문헌을 열면 다음 단계입니다.',cap:{en:'Library · bibliographic records imported from Zotero',ko:'문헌 목록 · Zotero에서 가져온 서지정보'}},
+ {en:'Beside the bibliography, write the reading note: the question you bring, how it connects to the project, the next step. Quotations take a page number so the passage can be found again. What you note here is what the research notes build on.',ko:'서지정보 옆에 독서 메모를 씁니다. 가져온 질문, 프로젝트와의 연결, 다음 할 일. 인용구에는 쪽수를 붙여 나중에 그 구절로 돌아갑니다. 여기 적은 것이 연구 노트의 재료가 됩니다.',cap:{en:'Reading record · Objectivity, linked from Galpi',ko:'문헌 읽기 · 갈피에서 연결한 Objectivity'}},
+ {en:'Set a claim down with the evidence it still needs and the counterpoint it has to meet. Reviewing that structure is how a chapter develops; nothing is turned into a draft automatically.',ko:'주장을 적고, 아직 필요한 근거와 반론을 함께 남깁니다. 이 구조를 검토하며 원고의 장을 발전시킵니다. 자동으로 초고가 되지는 않습니다.',cap:{en:'Research note · “Argument map · Prediction as paperwork”',ko:'연구 노트 · “Argument map · Prediction as paperwork”'}},
+ {en:'Open the chapter in its binder: the structure on the left, the body in the middle, the sources beside it. Notes and writing share one workspace, so the evidence stays within reach while you write.',ko:'바인더에서 장을 엽니다. 왼쪽에 구조, 가운데에 본문, 곁에 문헌. 노트와 집필이 같은 작업 공간에 있어 쓰는 동안 근거가 손닿는 곳에 있습니다.',cap:{en:'Manuscript · “The Paper Trail of Prediction”',ko:'원고 · “The Paper Trail of Prediction”'}},
+ {en:'Place reading, research, writing, seminars and meetings in the week, each as what it is. The plan shows where the project’s time actually goes, and where the next session starts.',ko:'읽기, 자료 조사, 집필, 세미나, 회의를 각각 그 활동으로 한 주에 배치합니다. 계획은 프로젝트의 시간이 실제로 어디로 가는지, 다음 작업이 어디서 시작하는지 보여 줍니다.',cap:{en:'Weekly plan · reading, research, writing, class, meeting and administration',ko:'주간 계획 · 읽기·조사·집필·수업·회의·행정'}}
 ];
 const imageLabels = {
  'flow-library':{en:'Saegim — library · Academic Neutral',ko:'새김 — 문헌 목록 · Academic Neutral'},'flow-library-forest':{en:'Saegim — library · Deep Forest',ko:'새김 — 문헌 목록 · Deep Forest'},'flow-library-eink':{en:'Saegim — library · Simple E-Ink',ko:'새김 — 문헌 목록 · Simple E-Ink'},'flow-linked-reading':{en:'Saegim — reading record linked from Galpi',ko:'새김 — 갈피에서 연결한 문헌 읽기'},'flow-archive-import':{en:'Saegim — import from Galpi',ko:'새김 — 갈피에서 가져오기'},'archive-return':{en:'Galpi — back on the record after Open Archive',ko:'갈피 — Open Archive로 돌아온 기록'},'flow-notes':{en:'Saegim — research notes',ko:'새김 — 연구 노트'},
