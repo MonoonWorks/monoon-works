@@ -4,38 +4,206 @@
   "title": "Design System: Monoon Works",
   "extensions": {
     "colorMeta": {
-      "cinnabar": { "role": "primary", "displayName": "Cinnabar", "canonical": "#B44B34", "tonalRamp": ["#2E120C", "#4D1E14", "#6E2B1D", "#8F3927", "#B44B34", "#CF7A66", "#E4A999", "#F3D8D0"] },
-      "tide": { "role": "secondary", "displayName": "Tide (Academia Flow)", "canonical": "#285E71", "tonalRamp": ["#0B1A20", "#142F3A", "#1C4454", "#285E71", "#3F7B90", "#7FB1C4", "#B3D2DE", "#E0EEF2"] },
-      "moss": { "role": "secondary", "displayName": "Moss (Academia Archive)", "canonical": "#53634A", "tonalRamp": ["#161B13", "#2A3225", "#3E4A37", "#53634A", "#6E8162", "#97A98C", "#C2CEB9", "#E6EBE1"] },
-      "clay": { "role": "secondary", "displayName": "Clay (Simple PDF)", "canonical": "#A84F40", "tonalRamp": ["#2C1410", "#4A221B", "#6A3127", "#8A4034", "#A84F40", "#C57B6E", "#DEAAA0", "#F1D9D3"] },
-      "ochre": { "role": "secondary", "displayName": "Ochre (Simple Note)", "canonical": "#8B662B", "tonalRamp": ["#241A0B", "#3D2C13", "#57401C", "#715324", "#8B662B", "#AD8A52", "#CDB38B", "#E9DCC6"] },
-      "iris": { "role": "secondary", "displayName": "Iris (Simple Search)", "canonical": "#635686", "tonalRamp": ["#1A1624", "#2D273E", "#413857", "#52476F", "#635686", "#8A7FA8", "#B1A9C7", "#DAD5E6"] },
-      "paper": { "role": "neutral", "displayName": "Paper", "canonical": "#F4F1E9", "tonalRamp": ["#2A2822", "#4E4A40", "#726D5F", "#97917F", "#BBB5A2", "#DBD6C6", "#EAE5D9", "#F4F1E9"] },
-      "ink": { "role": "neutral", "displayName": "Ink", "canonical": "#242923", "tonalRamp": ["#242923", "#3A4238", "#4A5248", "#60665D", "#8A9087", "#B5BAB2", "#D5D8D2", "#EDEEEB"] }
+      "cinnabar": {
+        "role": "primary",
+        "displayName": "Cinnabar",
+        "canonical": "#B44B34",
+        "tonalRamp": [
+          "#2E120C",
+          "#4D1E14",
+          "#6E2B1D",
+          "#8F3927",
+          "#B44B34",
+          "#CF7A66",
+          "#E4A999",
+          "#F3D8D0"
+        ]
+      },
+      "tide": {
+        "role": "secondary",
+        "displayName": "Tide (Academia Flow)",
+        "canonical": "#285E71",
+        "tonalRamp": [
+          "#0B1A20",
+          "#142F3A",
+          "#1C4454",
+          "#285E71",
+          "#3F7B90",
+          "#7FB1C4",
+          "#B3D2DE",
+          "#E0EEF2"
+        ]
+      },
+      "moss": {
+        "role": "secondary",
+        "displayName": "Moss (Academia Archive)",
+        "canonical": "#53634A",
+        "tonalRamp": [
+          "#161B13",
+          "#2A3225",
+          "#3E4A37",
+          "#53634A",
+          "#6E8162",
+          "#97A98C",
+          "#C2CEB9",
+          "#E6EBE1"
+        ]
+      },
+      "clay": {
+        "role": "secondary",
+        "displayName": "Clay (Simple PDF)",
+        "canonical": "#A84F40",
+        "tonalRamp": [
+          "#2C1410",
+          "#4A221B",
+          "#6A3127",
+          "#8A4034",
+          "#A84F40",
+          "#C57B6E",
+          "#DEAAA0",
+          "#F1D9D3"
+        ]
+      },
+      "ochre": {
+        "role": "secondary",
+        "displayName": "Ochre (Simple Note)",
+        "canonical": "#8B662B",
+        "tonalRamp": [
+          "#241A0B",
+          "#3D2C13",
+          "#57401C",
+          "#715324",
+          "#8B662B",
+          "#AD8A52",
+          "#CDB38B",
+          "#E9DCC6"
+        ]
+      },
+      "iris": {
+        "role": "secondary",
+        "displayName": "Iris (Simple Search)",
+        "canonical": "#635686",
+        "tonalRamp": [
+          "#1A1624",
+          "#2D273E",
+          "#413857",
+          "#52476F",
+          "#635686",
+          "#8A7FA8",
+          "#B1A9C7",
+          "#DAD5E6"
+        ]
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "Paper",
+        "canonical": "#F4F1E9",
+        "tonalRamp": [
+          "#2A2822",
+          "#4E4A40",
+          "#726D5F",
+          "#97917F",
+          "#BBB5A2",
+          "#DBD6C6",
+          "#EAE5D9",
+          "#F4F1E9"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "canonical": "#242923",
+        "tonalRamp": [
+          "#242923",
+          "#3A4238",
+          "#4A5248",
+          "#60665D",
+          "#8A9087",
+          "#B5BAB2",
+          "#D5D8D2",
+          "#EDEEEB"
+        ]
+      }
     },
     "typographyMeta": {
-      "display": { "displayName": "Display", "purpose": "The hero statement only; Korean switches to Pretendard 700." },
-      "headline": { "displayName": "Headline", "purpose": "Section statements and product headings." },
-      "title": { "displayName": "Title", "purpose": "Ledger and product-row headings." },
-      "body": { "displayName": "Body", "purpose": "Running copy, 66ch measure." },
-      "label": { "displayName": "Label", "purpose": "Board labels, tile names, kinds and dates; never uppercase." }
+      "display": {
+        "displayName": "Display",
+        "purpose": "The hero statement only; Korean switches to Pretendard 700."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Section statements and product headings."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Ledger and product-row headings."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Running copy, 66ch measure."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Board labels, tile names, kinds and dates; never uppercase."
+      }
     },
     "shadows": [
-      { "name": "dialog", "value": "0 30px 90px -20px #24292399", "purpose": "The enlarged-image dialog only; the page is flat at rest." },
-      { "name": "dot-halo", "value": "0 0 0 3px #FFFDF7", "purpose": "Keeps the cinnabar dot legible over grid lines and tiles." }
+      {
+        "name": "dialog",
+        "value": "0 30px 90px -20px #24292399",
+        "purpose": "The enlarged-image dialog only; the page is flat at rest."
+      },
+      {
+        "name": "dot-halo",
+        "value": "0 0 0 3px #FFFDF7",
+        "purpose": "Keeps the cinnabar dot legible over grid lines and tiles."
+      }
     ],
     "motion": [
-      { "name": "ease", "value": "cubic-bezier(.16, 1, .3, 1)", "purpose": "Every arrival: tiles, dot travel, wipes, reveals." },
-      { "name": "mark-draw", "value": "stroke-dashoffset 1.1s ease", "purpose": "Marks draw themselves in by their strokes; fills fade after 0.5s." },
-      { "name": "dot-travel", "value": "offset-distance 900ms ease along a Manhattan path on the grid", "purpose": "The dot moves only along grid lines, from tile corner to tile corner." },
-      { "name": "stage-wipe", "value": "clip-path inset(0 0 0 100%) → inset(0 0 0 0) 540ms", "purpose": "Flow tab change." },
-      { "name": "stream", "value": "2 characters per 26ms, 320ms between sentences", "purpose": "The Claude answer arrives sentence by sentence, the page chip after each." },
-      { "name": "reveal", "value": "opacity + translateY(18px) 0.8–0.9s ease, sibling stagger 90ms (max 5)", "purpose": "Ledger rows and figures below the fold." }
+      {
+        "name": "ease",
+        "value": "cubic-bezier(.16, 1, .3, 1)",
+        "purpose": "Every arrival: tiles, dot travel, wipes, reveals."
+      },
+      {
+        "name": "mark-draw",
+        "value": "stroke-dashoffset 1.1s ease",
+        "purpose": "Marks draw themselves in by their strokes; fills fade after 0.5s."
+      },
+      {
+        "name": "dot-travel",
+        "value": "offset-distance 900ms ease along a Manhattan path on the grid",
+        "purpose": "The dot moves only along grid lines, from tile corner to tile corner."
+      },
+      {
+        "name": "stage-wipe",
+        "value": "clip-path inset(0 0 0 100%) → inset(0 0 0 0) 540ms",
+        "purpose": "Flow tab change."
+      },
+      {
+        "name": "stream",
+        "value": "2 characters per 26ms, 320ms between sentences",
+        "purpose": "The Claude answer arrives sentence by sentence, the page chip after each."
+      },
+      {
+        "name": "reveal",
+        "value": "opacity + translateY(18px) 0.8–0.9s ease, sibling stagger 90ms (max 5)",
+        "purpose": "Ledger rows and figures below the fold."
+      }
     ],
     "breakpoints": [
-      { "name": "wide", "value": "1100px" },
-      { "name": "phone", "value": "780px" },
-      { "name": "narrow", "value": "400px" }
+      {
+        "name": "wide",
+        "value": "1100px"
+      },
+      {
+        "name": "phone",
+        "value": "780px"
+      },
+      {
+        "name": "narrow",
+        "value": "400px"
+      }
     ]
   },
   "components": [
@@ -67,9 +235,9 @@
       "name": "Simple tile",
       "kind": "custom",
       "refersTo": "tile-simple",
-      "description": "The app tile for the Simple tools: sand ground, mark in the tool's colour.",
-      "html": "<button class=\"ds-tile-simple\" type=\"button\"><svg viewBox=\"0 0 128 128\" aria-hidden=\"true\"><path d=\"M33 18H82L104 40V99Q104 110 93 110H33Q22 110 22 99V29Q22 18 33 18ZM82 18V40H104\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"8\" stroke-linejoin=\"round\"/><rect x=\"39\" y=\"56\" width=\"24\" height=\"36\" rx=\"2\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"6\"/><rect x=\"77\" y=\"56\" width=\"13\" height=\"24\" rx=\"2\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"6\"/></svg><span class=\"ds-tile-name\">Simple PDF</span></button>",
-      "css": ".ds-tile-simple{position:relative;width:76px;aspect-ratio:1;border:0;padding:0;background:#EAE5D9;color:#A84F40;box-shadow:inset 0 0 0 1px #CECFC3;border-radius:22%;display:grid;place-items:center;cursor:pointer}.ds-tile-simple svg{width:78%;height:78%}.ds-tile-simple:hover{transform:translateY(-3px)}.ds-tile-simple:focus-visible{outline:0;box-shadow:inset 0 0 0 1px #CECFC3,0 0 0 3px #FFFDF7,0 0 0 5px #B44B34}.ds-tile-name{position:absolute;top:calc(100% + 9px);left:50%;transform:translateX(-50%);font:600 11px/1.3 Manrope,sans-serif;color:#60665D;white-space:nowrap}"
+      "description": "The app tile for the Simple tools (icon set \"Paper in action\", 2026-10-08): sand ground, a pale paper fill and the mark in the tool's colour.",
+      "html": "<button class=\"ds-tile-simple\" type=\"button\"><svg viewBox=\"0 0 128 128\" aria-hidden=\"true\"><g transform=\"translate(12 12) scale(.8125)\"><path d=\"M25 27H47Q58 27 64 35Q70 27 81 27H103V99H81Q70 99 64 107Q58 99 47 99H25Z\" fill=\"#F0DCD4\" stroke=\"currentColor\" stroke-width=\"5.5\" stroke-linejoin=\"round\"/><path d=\"M64 35V106\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"5.5\"/><path d=\"M84 27V46H103\" fill=\"#FFFCF6\" stroke=\"currentColor\" stroke-width=\"5.5\" stroke-linejoin=\"round\"/><path d=\"M84 27L103 46\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"5.5\"/><path d=\"M37 47H49M37 59H49M77 63H90M77 75H90\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"4.5\" stroke-linecap=\"round\"/></g></svg><span class=\"ds-tile-name\">Simple PDF</span></button>",
+      "css": ".ds-tile-simple{position:relative;width:76px;aspect-ratio:1;border:0;padding:0;background:#EAE5D9;color:#A84F40;box-shadow:inset 0 0 0 1px #CECFC3;border-radius:22%;display:grid;place-items:center;cursor:pointer}.ds-tile-simple svg{width:88%;height:88%}.ds-tile-simple:hover{transform:translateY(-3px)}.ds-tile-simple:focus-visible{outline:0;box-shadow:inset 0 0 0 1px #CECFC3,0 0 0 3px #FFFDF7,0 0 0 5px #B44B34}.ds-tile-name{position:absolute;top:calc(100% + 9px);left:50%;transform:translateX(-50%);font:600 11px/1.3 Manrope,sans-serif;color:#60665D;white-space:nowrap}"
     },
     {
       "name": "Ledger row",
@@ -116,12 +284,36 @@
       "One authored moment: the board, the dot, and the thread"
     ],
     "rules": [
-      { "name": "The Signature Rule", "body": "Cinnabar marks what is live: the dot, the thread, the active state, the beta band. A heading, a label or a link is never cinnabar.", "section": "colors" },
-      { "name": "The Own-Region Rule", "body": "A product colour appears only inside that product’s region: its tile, its frame, its markers. It never leaks into another section or into page chrome.", "section": "colors" },
-      { "name": "The Calm Capture Rule", "body": "Application captures sit inside a hairline frame in the product’s colour on a sand ground; nothing is painted over them.", "section": "colors" },
-      { "name": "The Two Faces Rule", "body": "Manrope for English headings, the wordmark, numerals and labels; Pretendard for Korean and for all body copy. No third face.", "section": "typography" },
-      { "name": "The Weight-Only Rule", "body": "Emphasis comes from weight (600/700) or size, never from colour, italics or gradients.", "section": "typography" },
-      { "name": "The Flat Desk Rule", "body": "No shadows at rest. A rule, a ground change or a colour change does the separating.", "section": "elevation" }
+      {
+        "name": "The Signature Rule",
+        "body": "Cinnabar marks what is live: the dot, the thread, the active state, the beta band. A heading, a label or a link is never cinnabar.",
+        "section": "colors"
+      },
+      {
+        "name": "The Own-Region Rule",
+        "body": "A product colour appears only inside that product’s region: its tile, its frame, its markers. It never leaks into another section or into page chrome.",
+        "section": "colors"
+      },
+      {
+        "name": "The Calm Capture Rule",
+        "body": "Application captures sit inside a hairline frame in the product’s colour on a sand ground; nothing is painted over them.",
+        "section": "colors"
+      },
+      {
+        "name": "The Two Faces Rule",
+        "body": "Manrope for English headings, the wordmark, numerals and labels; Pretendard for Korean and for all body copy. No third face.",
+        "section": "typography"
+      },
+      {
+        "name": "The Weight-Only Rule",
+        "body": "Emphasis comes from weight (600/700) or size, never from colour, italics or gradients.",
+        "section": "typography"
+      },
+      {
+        "name": "The Flat Desk Rule",
+        "body": "No shadows at rest. A rule, a ground change or a colour change does the separating.",
+        "section": "elevation"
+      }
     ],
     "dos": [
       "Do keep cinnabar for the dot, the thread, active states and the beta band; use the product’s own colour inside its region.",

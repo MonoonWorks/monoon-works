@@ -183,7 +183,7 @@ Flat by default. Depth comes from tonal layering (warm white on paper on sand, i
 
 ## Shapes
 
-Square corners everywhere except two shapes from the brand: the app tile (22% radius, square aspect) and the page-cite chip (pill). Frames, buttons, fields and the board are rectangles with 1px rules. Marks are stroke-drawn (8–12 units at 128 viewBox); strokes draw in with `stroke-dashoffset`, fills fade after. The return-arrow marker (#m-return) and the wordmark grid use the same stroke language at small sizes.
+Square corners everywhere except two shapes from the brand: the app tile (22% radius, square aspect) and the page-cite chip (pill). Frames, buttons, fields and the board are rectangles with 1px rules. Marks are stroke-drawn (8–12 units at 128 viewBox); the three Simple marks (icon set “Paper in action”, 2026-10-08) add a pale paper fill in the tool’s tint (#F0DCD4 / #EEE1C7 / #E5DFEF). Strokes draw in with `stroke-dashoffset`, fills fade after. The return-arrow marker (#m-return) and the wordmark grid use the same stroke language at small sizes.
 
 ## Components
 
