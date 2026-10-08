@@ -213,6 +213,9 @@ Square corners everywhere except two shapes from the brand: the app tile (22% ra
 ### The board, the dot and the thread (signature)
 - The hero canvas: grid lines, five tiles, two row labels. On load (motion on, in view) the tiles draw in one by one while the dot travels the grid lines to each tile’s open corner and the caption names the tool; hovering or focusing a tile moves the dot there, clicking scrolls to the section. The dot rests in the bottom-right cell and pulses once in a while. Below the hero the thread continues down the left rail with a dot at its head and fills with scroll. With reduced motion everything is shown settled; the toggle reads as plain text.
 
+### Path sheets (signature)
+- The bridge from principles to products: three paper sheets on a fine grid (8 × ~7 cells on warm white). Galpi’s source sheet is tinted #E9ECE2, Saegim’s note is warm white, the argument map #F1EEE5; each carries its product mark and a product-coloured border when active. Sheets sit in a descending staircase with a slight rotation (−2° / 1.5° / −1°) so the route never crosses a sheet. The active sheet lifts (translateY, scale 1.03) and opens its details through a grid-row reveal; the others rest at 62% opacity. The cinnabar dot travels the grid lines to each sheet’s top-right corner, drawing the thread. Text inside the illustration never drops below 11px.
+
 ### Timeline
 - Four milestones on a hairline with 11px dots: done milestones ink-filled, “Now” cinnabar, future outlined. The cinnabar progress line scales in from the left to the current milestone (vertical on mobile).
 
