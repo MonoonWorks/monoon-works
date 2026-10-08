@@ -127,7 +127,7 @@ Paper and ink carry the page; cinnabar is the signature; five tool colours each 
 - **Cinnabar** (#B44B34): the brand signature. The dot on the board and at the head of the thread, the thread itself, the tile focus ring, the “Now” milestone, the status dot, and the beta band. Not a general accent.
 
 ### Secondary
-- **Tide** (#285E71): Academia Flow. Fills the Flow tile; on the ink workbench it appears tinted as Tide-on-ink (#7FB1C4) for the active tab number, arrow and zoom link, and the capture frame border (#4F7D8E).
+- **Tide** (#285E71): Academia Flow (새김). Fills the Flow tile; on the ink workbench it appears tinted as Tide-on-ink (#7FB1C4) for the active tab number, arrow and zoom link, and the capture frame border (#4F7D8E).
 - **Moss** (#53634A): Academia Archive / 모눈 갈피. Fills its tile, the return-arrow markers, and the Archive capture frame.
 - **Clay** (#A84F40): Simple PDF and its Claude engine. The mark inside its sand tile, the “Answer” label, the page-cite chips, the passage highlight, the pilot status line, and the Simple PDF frame.
 - **Ochre** (#8B662B): Simple Note. Its mark, the active note-view underline, the Note frame.

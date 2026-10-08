@@ -9,9 +9,9 @@ const root = document.documentElement;
 const ko = {
 'skip':'본문으로 이동','nav.tools':'도구','nav.roadmap':'로드맵','nav.beta':'베타 신청','nav.story':'만든 이야기',
 'hero.title':'생각의 자리.<br>그다음의 작업.',
-'hero.lead':'<strong>모눈웍스</strong>는 읽고, 쓰고, 다시 이어가는 사람을 위한 소프트웨어를 만듭니다. 긴 연구를 위한 Academia Flow와, 매일 꺼내 쓰는 작은 도구들입니다.',
+'hero.lead':'<strong>모눈웍스</strong>는 읽고, 쓰고, 다시 이어가는 사람을 위한 소프트웨어를 만듭니다. 긴 연구를 위한 새김(Academia Flow)과, 매일 꺼내 쓰는 작은 도구들입니다.',
 'hero.beta':'베타 신청하기','hero.tools':'다섯 가지 도구 만나기',
-'board.long':'길게 이어가는 작업','board.daily':'매일 꺼내 쓰는 도구','tile.archive':'갈피',
+'board.long':'길게 이어가는 작업','board.daily':'매일 꺼내 쓰는 도구','tile.flow':'새김','tile.archive':'갈피',
 'board.idle.t':'다섯 도구, 하나의 모눈.','board.idle.d':'점은 지금 손을 대고 있는 작업입니다.',
 'motion.pause':'모션 멈추기','motion.play':'모션 재생','motion.reduced':'모션 줄이기 적용 중',
 'status':'비공개 파일럿 운영 중 · 2027년 상반기 공개 베타 예정',
@@ -21,8 +21,8 @@ const ko = {
 'p2.t':'맥락을 가까이.','p2.d':'원본과 주석, 문장과 출처, 계획과 기록을 함께 이해할 수 있도록 자리를 잡습니다.',
 'p3.t':'다시 이어가기 쉽게.','p3.d':'읽던 위치와 작업의 상태가 남도록 돕습니다. 오늘의 작업이 내일의 시작점이 됩니다.',
 'principles.note':'모눈에는 자리가 있고, 여백이 있습니다. 도구가 바탕을 만들면, 그 위의 생각은 사람이 이어 갑니다.',
-'flow.sub':'이어가는 연구 작업공간','flow.title':'연구의 여러 시간을 한자리에.',
-'flow.copy1':'일정과 읽기, 노트와 집필을 오가며 긴 연구를 이어 갑니다. 서로 다른 속도로 진행되는 작업을 한 공간에서 살필 수 있습니다.',
+'flow.name':'새김','flow.sub':'Academia Flow · 이어가는 연구 작업공간','flow.title':'연구의 여러 시간을 한자리에.',
+'flow.copy1':'새김은 일정과 읽기, 노트와 집필을 오가며 긴 연구를 이어 갑니다. 서로 다른 속도로 진행되는 작업을 한 공간에서 살필 수 있습니다.',
 'flow.copy2':'인용구에는 쪽 번호가 남고, 노트는 출처와 대조할 수 있으며, 장별 초고는 그것을 가능하게 한 근거 옆에 머뭅니다.',
 'stage.read':'읽기','stage.notes':'노트','stage.writing':'집필','stage.planning':'계획',
 'flow.caption':'데스크톱 앱에서 직접 캡처 · Academic Neutral 테마 · 시연용 작업 공간.','zoom':'크게 보기 ↗',
@@ -44,7 +44,7 @@ const ko = {
 'fact2.t':'보낼 내용은 연구자가 선택','fact2.d':'범위 안의 쪽 텍스트, 질문, 직접 고른 그림 영역만 Claude API로 보냅니다. PDF 파일, 하이라이트, 메모는 보내지 않습니다.',
 'fact3.t':'원하면 이 Mac 안에서만','fact3.d':'같은 패널을 Mac에서 실행되는 모델로 바꾸면 아무것도 밖으로 나가지 않습니다.',
 'fact4.t':'API 키는 키체인에','fact4.d':'API 키는 그 기기의 macOS 키체인에 저장하며, 저장하기 전에 유효한지 확인합니다.',
-'claude.next':'Claude와 함께 계획 중인 다음 기능','next1':'Flow — 선택한 노트 사이의 주장 비교','next2':'Flow — 초고 문단을 근거 자료와 대조','next3':'Simple PDF — 선택한 구절·쪽 번역',
+'claude.next':'Claude와 함께 계획 중인 다음 기능','next1':'새김 — 선택한 노트 사이의 주장 비교','next2':'새김 — 초고 문단을 근거 자료와 대조','next3':'Simple PDF — 선택한 구절·쪽 번역',
 'simple.title':'Simple.<br>필요한 일에 곧바로.','simple.copy':'읽고, 쓰고, 찾는 세 가지 동작. 같은 문서의 형태, 같은 이름의 리듬으로 묶은 세 개의 작은 macOS 도구입니다.',
 'pdf.sub':'학술서를 위한 리더','pdf.title':'본문을 놓치지 않고, 미주까지.','pdf.lead':'본문은 읽던 쪽에 두고, 다른 쪽을 보여 주는 두 번째 창에서 미주를 엽니다.',
 'pdf.copy':'목차로 장 사이를 이동하고, 읽던 자리를 유지하며, 문서에 인용구와 노트를 남깁니다. 위의 Claude 엔진은 이 리더 안에 있습니다.','pdf.link':'Claude에게 구절 묻기 ↗','pdf.caption':'본문 1쪽과 미주 10쪽을 나란히.',
@@ -54,10 +54,10 @@ const ko = {
 'search.copy':'파일명과 메타데이터만 색인하며 문서 본문은 읽지 않습니다. 종류로 좁히고, Quick Look으로 미리 보고, 열거나 Finder에서 보기까지 키보드로 합니다.',
 'search.hint':'예시 파일명으로 하는 시연 · 초성과 부분 이름 모두 일치합니다.','search.caption':'일치 규칙의 시연 · 실제 앱은 macOS 메뉴 막대에서 실행됩니다.','search.shot':'앱 화면 보기 ↗',
 'roadmap.title':'앞으로의 길.','roadmap.copy':'진행 중인 연구와 나란히 만들고, 더 넓게 내놓기 전에 연구자들과 먼저 시험합니다.',
-'r1.date':'2025년 7월','r1.t':'개발 시작','r1.d':'대학원 연구자의 읽기와 쓰기에서 Academia Flow가 시작됩니다.',
+'r1.date':'2025년 7월','r1.t':'개발 시작','r1.d':'대학원 연구자의 읽기와 쓰기에서 새김(Academia Flow)이 시작됩니다.',
 'r2.date':'지금','r2.t':'비공개 파일럿','r2.d':'Flow, Archive와 Simple 도구들을 소수의 연구자와 함께 씁니다. Simple PDF의 Claude도 여기서 먼저 시험합니다.',
-'r3.date':'2027년 상반기','r3.t':'공개 베타','r3.d':'Academia Flow와 함께 쓰는 도구들을 베타 신청자에게 엽니다.',
-'r4.date':'다음','r4.t':'Flow에 Claude','r4.d':'노트 사이의 주장을 비교하고 초고를 근거와 대조합니다.',
+'r3.date':'2027년 상반기','r3.t':'공개 베타','r3.d':'새김과 함께 쓰는 도구들을 베타 신청자에게 엽니다.',
+'r4.date':'다음','r4.t':'새김에 Claude','r4.d':'노트 사이의 주장을 비교하고 초고를 근거와 대조합니다.',
 'founder.title':'연구자의<br>책상에서.','founder.role':'대학원생·연구자 · 창업자·개발자 · 서울',
 'founder.p1':'모눈웍스는 대학원 연구의 일상적인 작업에서 시작했습니다. 문헌을 따라가고, 정확한 구절로 돌아가며, 흩어진 노트를 하나의 논증으로 발전시키는 일이었습니다.',
 'founder.p2':'Zotero, Tropy와 EndNote는 각자의 역할이 있는 유용한 도구입니다. 그 사이에 남는 질문이 있었습니다. 연구가 커져도 자료, 노트, 집필과 계획을 어떻게 계속 연결할 수 있을까?',
@@ -66,14 +66,14 @@ const ko = {
 'beta.cta':'베타 신청하기','beta.pilot':'비공개 파일럿 문의','faq.title':'궁금한 점.',
 'faq1.q':'언제 사용할 수 있나요?','faq1.a':'지금은 소규모 비공개 파일럿으로 운영하며, 공개 베타는 2027년 상반기를 계획하고 있습니다. 베타 신청을 남기거나 파일럿 참여를 문의해 주세요.',
 'faq2.q':'Simple PDF는 어떤 AI를 쓰고, 무엇을 보내나요?','faq2.a':'패널마다 고릅니다. Claude API의 Claude Opus 5.5, 또는 Mac에서 실행되는 모델입니다. Claude를 고르면 범위 안의 쪽 텍스트, 질문, 직접 고른 그림 영역만 Anthropic API로 보냅니다. PDF 파일, 하이라이트, 메모는 보내지 않습니다. <a href="privacy.html#ko">개인정보 안내</a>를 참고하세요.',
-'faq3.q':'연구 자료는 어디에 저장되나요?','faq3.a':'Flow의 연구 작업 공간은 로컬 저장소를 사용합니다. Archive도 원문 파일과 데이터베이스를 로컬에 보관합니다. Zotero 가져오기와 같은 선택적 연결은 별도의 설정을 사용합니다.',
+'faq3.q':'연구 자료는 어디에 저장되나요?','faq3.a':'새김(Flow)의 연구 작업 공간은 로컬 저장소를 사용합니다. Archive도 원문 파일과 데이터베이스를 로컬에 보관합니다. Zotero 가져오기와 같은 선택적 연결은 별도의 설정을 사용합니다.',
 'faq4.q':'Zotero와 Word를 계속 써도 되나요?','faq4.a':'네. Archive로 Zotero 자료를 가져올 수 있고, 별도 Word 추가 기능에서 문헌 검색, 인용, 각주와 참고문헌 작업을 이어갈 수 있습니다.',
-'faq5.q':'Flow와 Archive는 어떻게 함께 쓰나요?','faq5.a':'Archive는 원문 파일과 서지정보, 자료의 맥락을 관리합니다. Flow는 읽기, 연구 노트, 장별 집필과 계획을 연결합니다. 선택한 Archive 자료를 Flow에 연결해 사용할 수 있습니다.',
+'faq5.q':'새김과 갈피는 어떻게 함께 쓰나요?','faq5.a':'갈피(Archive)는 원문 파일과 서지정보, 자료의 맥락을 관리합니다. 새김(Flow)은 읽기, 연구 노트, 장별 집필과 계획을 연결합니다. 선택한 갈피 자료를 새김에 연결해 사용할 수 있습니다.',
 'shots.note':'화면은 실제 앱이며, 시연용 작업 공간과 공개 서지정보를 사용했습니다. 구절 답변과 검색창은 각 기능의 동작을 보여 주는 그래픽입니다.',
 'footer.company':'© 2026 Monoon Works · 서울','footer.privacy':'개인정보 안내','footer.top':'맨 위로 ↑'
 };
 const tools = {
- flow:{name:'Academia Flow',en:'Reading, notes, writing and planning for the long research project.',ko:'긴 연구를 위한 읽기·노트·집필·계획.',href:'#flow'},
+ flow:{name:'Academia Flow',nameKo:'새김',en:'Reading, notes, writing and planning for the long research project.',ko:'긴 연구를 위한 읽기·노트·집필·계획.',href:'#flow'},
  archive:{name:'Academia Archive',nameKo:'모눈 갈피',en:'Sources with their context, and a way back to the original.',ko:'원본에 맥락을, 다시 돌아갈 자리를.',href:'#archive'},
  pdf:{name:'Simple PDF',en:'The body on one page, the endnotes on another. Now with Claude.',ko:'본문과 미주를 나란히. 이제 Claude와 함께.',href:'#claude'},
  note:{name:'Simple Note',en:'A sentence, straight into your file.',ko:'떠오른 문장을 바로, 내 파일로.',href:'#simple-note'},
@@ -86,9 +86,9 @@ const stages = [
  {en:'Give the long project a place in the week. Arrange reading, research, writing, classes and meetings, and return to what the last session left.',ko:'긴 프로젝트에 한 주의 자리를 줍니다. 읽기·연구·집필·수업·회의를 배치하고, 지난 작업이 남긴 곳으로 돌아옵니다.'}
 ];
 const imageLabels = {
- 'flow-library':{en:'Academia Flow — reading library',ko:'Academia Flow — 문헌 목록'},'flow-notes':{en:'Academia Flow — research notes',ko:'Academia Flow — 연구 노트'},
- 'flow-manuscript':{en:'Academia Flow — chapter writing',ko:'Academia Flow — 원고'},'flow-week':{en:'Academia Flow — weekly planning',ko:'Academia Flow — 주간 계획'},
- 'flow-themes':{en:'Academia Flow — appearance settings',ko:'Academia Flow — 화면 설정'},'archive-library':{en:'Academia Archive — source library',ko:'모눈 갈피 — 자료 라이브러리'},
+ 'flow-library':{en:'Academia Flow — reading library',ko:'새김 — 문헌 목록'},'flow-notes':{en:'Academia Flow — research notes',ko:'새김 — 연구 노트'},
+ 'flow-manuscript':{en:'Academia Flow — chapter writing',ko:'새김 — 원고'},'flow-week':{en:'Academia Flow — weekly planning',ko:'새김 — 주간 계획'},
+ 'flow-themes':{en:'Academia Flow — appearance settings',ko:'새김 — 화면 설정'},'archive-library':{en:'Academia Archive — source library',ko:'모눈 갈피 — 자료 라이브러리'},
  'simple-pdf':{en:'Simple PDF — body and endnotes',ko:'Simple PDF — 본문과 미주'},'note-editor':{en:'Simple Note — rich text',ko:'Simple Note — 리치텍스트'},
  'note-markdown':{en:'Simple Note — Markdown',ko:'Simple Note — Markdown'},'simple-search':{en:'Simple Search — menu bar search',ko:'Simple Search — 메뉴 막대 검색'}
 };
