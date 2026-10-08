@@ -137,7 +137,7 @@ Paper and ink carry the page; cinnabar is the signature; five tool colours each 
 - **Paper** (#F4F1E9): page ground and the text colour on the cinnabar band.
 - **Warm white** (#FFFDF7): the board, the answer cards, the search demo; anything that sits on paper.
 - **Sand** (#EAE5D9): tile ground for the Simple tools, the passage stack, image frame ground.
-- **Ink** (#242923): text, the primary button, the Flow workbench ground.
+- **Ink** (#242923): text, the primary button, the Flow workbench ground, and the 결 (Gyeol) mark and tile — the centre colour that binds Saegim’s Tide and Galpi’s Moss.
 - **Muted** (#60665D): secondary copy, captions, labels, placeholders (4.6:1 on warm white).
 - **Rule** (#CECFC3) and **Grid** (#DDDCD0): hairline dividers, frames, and the board’s grid lines.
 - On ink: text #F4F1E9, muted #C3C8BD, rules #4A5248.
